@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html> 
+<head>
+	<link rel='stylesheet' href="login1.css">
+	<title>Inicio de sesión de un cliente</title> 
+	<meta charset=utf-8 /> 
+</head> 
+
+<body align='center'>
+<style>
+input[type=submit],input[type=reset]{
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #4CAF50;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+</style>
+
+<div class="login-page">
+  <div class="form">
+    <form action="login.php" method="post" class="login-form">
+      <input type="text" NAME="dni" pattern="^[0-9]{8}[a-zA-Z]{1}$" title="Formato incorrecto, por favor introduzca su dni del tipo: 44556677A"
+	  placeholder="Introduza su DNI" required />
+      <input type="password" NAME="password" placeholder="Contraseña" required />
+      <input type="submit" value="Acceder"> <input type="reset" value="Cancelar" />
+      <p class="message">Not registered? <a href="registro">Create an account</a></p>
+    </form>
+  </div>
+</div>
+
+<!-- <FORM ACTION="login.php" METHOD="post"> -->
+<!-- Introduzca su DNI<br> -->
+<!-- <input type="text" NAME="dni" pattern="^[0-9]{8}[a-zA-Z]{1}$" title="Formato incorrecto, por favor introduzca su dni del tipo: 44556677A" required /><br><br> -->
+<!-- Introduzca su contraseña<br> -->
+<!-- <input type="password" NAME="password" required /><br><br> -->
+<!-- <input type="submit" value="Acceder"> <input type="reset" value="Cancelar" /> -->
+<!-- </FORM> -->
+
+</body> 
+</html>
