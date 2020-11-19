@@ -36,7 +36,6 @@
   </style>
 </head>
 
-
 <?php
 	session_start();
 	if (isset($_SESSION['usuario'])) {
@@ -49,15 +48,20 @@
 
 <?php
 	//Dia y hora actual con cookies
-	setcookie("fechaActual",date("d M y"));
-	echo "Fecha actual: ".$_COOKIE["fechaActual"];
+	if(isset($_COOKIE["fechaActual"])){
+    echo "Fecha actual: ".$_COOKIE["fechaActual"];
+  }
+  else{
+    setcookie("fechaActual",date("d M y"));
+    echo "Fecha actual: ".date("d M y");
+  }
 	//Dia y hora ultimo acceso con cookies
 	if(isset($_COOKIE["fechaUltAcceso"])){
 		echo "<br>Fecha ultimo acceso: ".$_COOKIE["fechaUltAcceso"];
 		setcookie("fechaUltAcceso",date("d M y  H:i:s"));
 	}
 	else{
-		echo "Eres el primer acceso";
+		echo "<br>Eres el primer acceso";
 		setcookie("fechaUltAcceso",date("d ").date(" M").date(" y").date(" H:").date("i:").date("s"));
 	}
 	//Contador accesos a la página
@@ -73,6 +77,7 @@
 ?>
 
 <body>
+  <br><input type="button" align="right" onclick="logout()" value="logout"/>
 <div class="jumbotron text-center" style="background-image: url('PESTAÑA_RAMOS/IMAGENES_RAMOS/floresfondo.jpg'); background-size: 40% 110%; margin-bottom:auto;">
   <h1>Party Flowers S.A.</h1>
   <p>Tu floristeria online, y cada vez la de más gente</p>
@@ -176,7 +181,6 @@
 
 <script>
 $(document).ready(function(){
-
 	$('.ir-arriba').click(function(){
 		$('body, html').animate({
 			scrollTop: '0px'
@@ -192,6 +196,11 @@ $(document).ready(function(){
 	});
 
 });
+
+function logout(){
+  location.replace('logout.php');
+}
+
 </script>
 
 <footer class="jumbotron text-center" style="margin-bottom:0">
