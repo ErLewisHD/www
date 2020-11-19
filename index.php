@@ -199,18 +199,10 @@ $(document).ready(function(){
 
 });
 </script>
-<span class="ir-arriba icon-arrow-up2"></span>
-
-<video width="640" height="480" autoplay>
-  <source src="meEmborrachare.webm" type="video/webm">
-</video>
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLx0sYbCqOb8TBPRdmBHs5Iftvv9TPboYG"
-frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-
 
 <footer class="jumbotron text-center" style="margin-bottom:0">
-  Pie de página
+  Pie de página <br>
+  <span align="center" class="ir-arriba icon-arrow-up2"></span>
 </footer>
 
 </body>
