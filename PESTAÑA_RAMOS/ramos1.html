@@ -22,8 +22,9 @@
   <p>Tu floristeria online, y cada vez la de más gente</p>
 </div>
 
+
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-  <a class="nav-link" href="../index.php">Inicio</a>
+  <a class="nav-link" href="../index.html">Inicio</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -38,9 +39,104 @@
       <li class="nav-item">
         <a class="nav-link" href="../SanValentin/sanvalentin.html">San Valentín</a>
       </li>
+
+      <head>
+      <style>
+      input[type=text] {
+        width: 530px;
+        box-sizing: border-box;
+        border: 2px solid #ccc;
+        border-radius: 4px;
+        font-size: 15px;
+        background-color: white;
+        background-image: url('searchicon.png');
+        background-position: 10px 10px;
+        background-repeat: no-repeat;
+        padding: 12px 20px 12px 40px;
+        transition: width 0.4s ease-in-out;
+      }
+
+      input[type=text]:focus {
+        width: 100%;
+      }
+      </style>
+      </head>
+      <body>
+
+
+
+      <form>
+        <input type="text" name="search" placeholder="Search..">
+      </form>
+
+      </body>
+
+
     </ul>
   </div>
 </nav>
+
+
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("#flip").click(function(){
+    $("#panel").slideToggle("slow");
+  });
+});
+</script>
+
+<script>
+$(document).ready(function(){
+  $("#flip").click(function(){
+    $("#panel2").slideToggle("slow");
+  });
+});
+</script>
+
+<script>
+$(document).ready(function(){
+  $("#flip").click(function(){
+    $("#panel3").slideToggle("slow");
+  });
+});
+</script>
+
+<script>
+$(document).ready(function(){
+  $("#flip").click(function(){
+    $("#panel4").slideToggle("slow");
+  });
+});
+</script>
+<style>
+#panel,#panel2,#panel3,#panel4,#flip {
+  padding: 5px;
+  text-align: center;
+  background-color: #e5eecc;
+  border: solid 1px #c3c3c3;
+}
+
+#panel,#panel2,#panel3,#panel4 {
+  padding: 5px;
+  display: none;
+}
+</style>
+</head>
+<body>
+
+<div id="flip">Filtro para búsqueda:</div>
+<div id="panel">Mas vendidos! </div>
+<div id="panel2">Mejor valorados!</div>
+<div id="panel3">De menor a mayor precio!</div>
+<div id="panel4">De mayor a menor precio!</div>
+
+</body>
+
+<br>
+</br>
+
 <center>
 <section>
   <article> <img onmouseover="bigImg(this)" onmouseout="normalImg(this)" src="IMAGENES_RAMOS/ramo1.jpg" alt="ramo2"> </article>
@@ -51,6 +147,10 @@
       <input type="text" class="form-control" placeholder="cantidad">
     </div>
   </aside>
+
+  <a class="button" href="Comprar.html">Comprar</a>
+
+  <br></br>
 
 </section>
 
@@ -74,6 +174,8 @@
         <input type="text" class="form-control" placeholder="cantidad">
       </div>
   </aside>
+  <button>Comprar</button>
+  <br></br>
 </section>
 </center>
 <div class="container">
@@ -85,6 +187,26 @@
     <li class="page-item"><a class="page-link" href="ramos2.html">Siguiente</a></li>
   </ul>
 </div>
+
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("button").click(function(){
+    $("p").hide(1000);
+    alert("La publicidad ahora está oculta");
+  });
+});
+</script>
+</head>
+<body>
+
+<button>Esconder publicidad</button>
+
+<p> <img src="https://www.apuestasdeportivas.pe/wp-content/uploads/sites/3/2019/08/f0ea6f91b10b6ed420d2cc04b8c73e62.jpg" onmouseover="bigImg(this)" onmouseout="normalImg(this)" alt="Publicidad"> </p>
+
+</body>
+
 
 <footer class="jumbotron text-center" style="margin-bottom:0">
   Pie de página
