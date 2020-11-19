@@ -39,11 +39,10 @@
 <?php
 	session_start();
 	if (isset($_SESSION['usuario'])) {
-		$cosa = "<h1>" . $_SESSION['usuario'] . "</h1>";
+		echo "<h1>" . $_SESSION['usuario'] . "</h1>";
 	} else {
-		$cosa = "<h1>Road of nopes</h1>";
+		echo "<h1>Inicia sesión para ver todas las funciones</h1>";
 	}
-	echo $cosa;
 ?>
 
 <?php
@@ -68,16 +67,22 @@
 	if(isset($_COOKIE["contador"])){
 		//La cookie caduca cada 10 minutos
 		setcookie("contador", $_COOKIE["contador"] + 1, time() + 60 * 10);
+    echo "<br>Accesos a la página: ".$_COOKIE["contador"];
 	}
 	else{
 		setcookie('contador', 1, time() + 60 * 10);
+    echo "<br>Accesos a la página: Contador reseteado, primer acceso";
 	}
-	echo "<br>Accesos a la página: ".$_COOKIE["contador"];
+;
   require 'conexionPDO.php';
 ?>
 
 <body>
-  <br><input type="button" align="right" onclick="logout()" value="logout"/>
+<?php
+  if(isset($_SESSION['usuario'])){
+    echo "<br><input type='button' align='right' onclick='logout()' value='logout'/>";
+  }
+?>
 <div class="jumbotron text-center" style="background-image: url('PESTAÑA_RAMOS/IMAGENES_RAMOS/floresfondo.jpg'); background-size: 40% 110%; margin-bottom:auto;">
   <h1>Party Flowers S.A.</h1>
   <p>Tu floristeria online, y cada vez la de más gente</p>
@@ -90,21 +95,30 @@
   </button>
   <div class="collapse navbar-collapse" id="collapsibleNavbar">
     <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" href="PESTAÑA_RAMOS/ramos1.html">Ramos</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Centros</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="SanValentin/sanvalentin.html">San Valentín</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="login.html">Iniciar sesion</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="registro.html">Registrarse</a>
-      </li>
+      <?php
+        if(isset($_SESSION['usuario'])){
+          echo "
+          <li class='nav-item'>
+            <a class='nav-link' href='PESTAÑA_RAMOS/ramos1.html'>Ramos</a>
+          </li>
+          <li class='nav-item'>
+            <a class='nav-link' href='#'>Centros</a>
+          </li>
+          <li class='nav-item'>
+            <a class='nav-link' href='SanValentin/sanvalentin.html'>San Valentín</a>
+          </li>";
+        }
+        else{
+          echo"
+          <li class='nav-item'>
+            <a class='nav-link' href='login.html'>Iniciar sesion</a>
+          </li>
+          <li class='nav-item'>
+            <a class='nav-link' href='registro.html'>Registrarse</a>
+          </li>
+          ";
+        }
+      ?>
     </ul>
   </div>
 </nav>
