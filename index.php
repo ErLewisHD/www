@@ -39,53 +39,34 @@
 <?php
 	session_start();
 	if (isset($_SESSION['usuario'])) {
-		echo "<h1>" . $_SESSION['usuario'] . "</h1>";
+		echo "<h2>Estoy aqui con mi compa el  " .$_SESSION['usuario'] ."</h2>";
 	} else {
-		echo "<h1>Inicia sesión para ver todas las funciones</h1>";
+		echo "<h2>Inicia sesión para ver todas las funciones</h2>";
 	}
 ?>
 
 <?php
-	//Dia y hora actual con cookies
-	if(isset($_COOKIE["fechaActual"])){
-    echo "Fecha actual: ".$_COOKIE["fechaActual"];
+  //Dia y hora actual con cookies
+  if(!isset($_COOKIE["fechaActual"])){
+    setcookie("fechaActual",date("d M Y"));
+  }
+  //Dia y hora ultimo acceso con cookies
+  setcookie("fechaUltAcceso",date("d M Y  H:i:s"));
+  //Contador accesos a la página
+  if(isset($_COOKIE["contador"])){
+    //La cookie caduca cada 10 minutos
+    setcookie("contador", $_COOKIE["contador"] + 1, time() + 60 * 10);
   }
   else{
-    setcookie("fechaActual",date("d M y"));
-    echo "Fecha actual: ".date("d M y");
+    setcookie('contador', 1, time() + 60 * 10);
   }
-	//Dia y hora ultimo acceso con cookies
-	if(isset($_COOKIE["fechaUltAcceso"])){
-		echo "<br>Fecha ultimo acceso: ".$_COOKIE["fechaUltAcceso"];
-		setcookie("fechaUltAcceso",date("d M y  H:i:s"));
-	}
-	else{
-		echo "<br>Eres el primer acceso";
-		setcookie("fechaUltAcceso",date("d ").date(" M").date(" y").date(" H:").date("i:").date("s"));
-	}
-	//Contador accesos a la página
-	if(isset($_COOKIE["contador"])){
-		//La cookie caduca cada 10 minutos
-		setcookie("contador", $_COOKIE["contador"] + 1, time() + 60 * 10);
-    echo "<br>Accesos a la página: ".$_COOKIE["contador"];
-	}
-	else{
-		setcookie('contador', 1, time() + 60 * 10);
-    echo "<br>Accesos a la página: Contador reseteado, primer acceso";
-	}
 ;
-  require 'conexionPDO.php';
 ?>
 
 <body>
-<?php
-  if(isset($_SESSION['usuario'])){
-    echo "<br><input type='button' align='right' onclick='logout()' value='logout'/>";
-  }
-?>
 <div class="jumbotron text-center" style="background-image: url('PESTAÑA_RAMOS/IMAGENES_RAMOS/floresfondo.jpg'); background-size: 40% 110%; margin-bottom:auto;">
   <h1>Party Flowers S.A.</h1>
-  <p>Tu floristeria online, y cada vez la de más gente</p>
+  <b>Tu floristeria online, y cada vez la de más gente</b>
 </div>
 
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
@@ -106,7 +87,9 @@
           </li>
           <li class='nav-item'>
             <a class='nav-link' href='SanValentin/sanvalentin.html'>San Valentín</a>
-          </li>";
+          </li>
+          <button onclick='logout()'>Cerrar sesion</button>
+          ";
         }
         else{
           echo"
@@ -219,8 +202,32 @@ function logout(){
 
 <footer class="jumbotron text-center" style="margin-bottom:0">
   Pie de página <br>
-  <span align="center" class="ir-arriba icon-arrow-up2"></span>
+  <span align="center" class="ir-arriba icon-arrow-up2"></span><br><br>
+  <?php
+    //Dia y hora actual con cookies
+    if(isset($_COOKIE["fechaActual"])){
+      echo "Fecha actual: ".$_COOKIE["fechaActual"];
+    }
+    else{
+      echo "Fecha actual: ".date("d M y");
+    }
+    //Dia y hora ultimo acceso con cookies
+    if(isset($_COOKIE["fechaUltAcceso"])){
+      echo "<br>Fecha ultimo acceso: ".$_COOKIE["fechaUltAcceso"];
+    }
+    else{
+      echo "<br>Eres el primer acceso";
+    }
+    //Contador accesos a la página
+    if(isset($_COOKIE["contador"])){
+      echo "<br>Accesos a la página: ".$_COOKIE["contador"];
+    }
+    else{
+      echo "<br>Accesos a la página: Contador reseteado, primer acceso";
+    }
+  ?>
 </footer>
+
 
 </body>
 </html>

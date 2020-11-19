@@ -26,7 +26,7 @@
 	else {
 		$registro = $stmtPDO->fetch(PDO::FETCH_ASSOC);
 		if ($pass == $registro['password']) {
-			$_SESSION['usuario'] = $registro['dni'];
+			$_SESSION['usuario'] = $registro['nombre'];
 			header("Location: http://localhost/index");
 		} else {
 			echo '<center><br><br><br><br>Contraseña incorrecta';
