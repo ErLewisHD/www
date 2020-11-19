@@ -129,10 +129,6 @@
 
       <div class="container-fluid">
         <div class="row">
-
-
-
-
           <div class="col-sm-9 col-8">
             <div id="demo" class="carousel slide" data-ride="carousel">
               <ul class="carousel-indicators">
@@ -177,8 +173,6 @@
     </div>
   </div>
 </div>
-
-
 
 <script>
 $(document).ready(function(){
