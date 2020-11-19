@@ -8,7 +8,7 @@
 
 <body align='center'>
 <style>
-input[type=submit],input[type=reset]{
+input[type=submit],input[type=reset], input[type=button]{
   font-family: "Roboto", sans-serif;
   text-transform: uppercase;
   outline: 0;
@@ -30,11 +30,17 @@ input[type=submit],input[type=reset]{
       <input type="text" NAME="dni" pattern="^[0-9]{8}[a-zA-Z]{1}$" title="Formato incorrecto, por favor introduzca su dni del tipo: 44556677A"
 	  placeholder="Introduza su DNI" required />
       <input type="password" NAME="password" placeholder="Contraseña" required />
-      <input type="submit" value="Acceder"> <input type="reset" value="Cancelar" />
+      <input type="submit" value="Acceder"/> <input type="button" value="Cancelar" onclick="redirectIndex()"/>
       <p class="message">Not registered? <a href="registro.html">Create an account</a></p>
     </form>
   </div>
 </div>
+
+<script>
+function redirectIndex(){
+	location.replace('index');
+}
+</script>
 
 </body>
 </html>
