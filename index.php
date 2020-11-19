@@ -80,7 +80,7 @@
         if(isset($_SESSION['usuario'])){
           echo "
           <li class='nav-item'>
-            <a class='nav-link' href='PESTAÑA_RAMOS/ramos1.html'>Ramos</a>
+            <a class='nav-link' href='PESTAÑA_RAMOS/ramos1'>Ramos</a>
           </li>
           <li class='nav-item'>
             <a class='nav-link' href='#'>Centros</a>
