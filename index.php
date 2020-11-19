@@ -35,6 +35,8 @@
 
   </style>
 </head>
+
+
 <?php
 	session_start();
 	if (isset($_SESSION['usuario'])) {
@@ -45,6 +47,31 @@
 	echo $cosa;
 ?>
 
+<?php
+	//Dia y hora actual con cookies
+	setcookie("fechaActual",date("d M y"));
+	echo "Fecha actual: ".$_COOKIE["fechaActual"];
+	//Dia y hora ultimo acceso con cookies
+	if(isset($_COOKIE["fechaUltAcceso"])){
+		echo "<br>Fecha ultimo acceso: ".$_COOKIE["fechaUltAcceso"];
+		setcookie("fechaUltAcceso",date("d M y  H:i:s"));
+	}
+	else{
+		echo "Eres el primer acceso";
+		setcookie("fechaUltAcceso",date("d ").date(" M").date(" y").date(" H:").date("i:").date("s"));
+	}
+	//Contador accesos a la página
+	if(isset($_COOKIE["contador"])){
+		//La cookie caduca cada 10 minutos
+		setcookie("contador", $_COOKIE["contador"] + 1, time() + 60 * 10);
+	}
+	else{
+		setcookie('contador', 1, time() + 60 * 10);
+	}
+	echo "<br>Accesos a la página: ".$_COOKIE["contador"];
+  require 'conexionPDO.php';
+?>
+
 <body>
 <div class="jumbotron text-center" style="background-image: url('PESTAÑA_RAMOS/IMAGENES_RAMOS/floresfondo.jpg'); background-size: 40% 110%; margin-bottom:auto;">
   <h1>Party Flowers S.A.</h1>
@@ -52,7 +79,7 @@
 </div>
 
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-  <a class="navbar-brand" href="index.html">Inicio</a>
+  <a class="navbar-brand" href="index.php">Inicio</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -68,7 +95,10 @@
         <a class="nav-link" href="SanValentin/sanvalentin.html">San Valentín</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="login.html">LOGIN</a>
+        <a class="nav-link" href="login.html">Iniciar sesion</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="registro.html">Registrarse</a>
       </li>
     </ul>
   </div>
