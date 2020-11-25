@@ -52,7 +52,7 @@
 
 <center>
 <section>
-  <article> <img onmouseover="bigImg(this)" onmouseout="normalImg(this)" src="../../../img/ramo1.jpg" alt="ramo2"> </article>
+  <article> <img onmouseover="bigImg(this)" onmouseout="normalImg(this)" src="../../img/ramo1.jpg" alt="ramo2"> </article>
   <aside>
     --INFORMACIÓN ACERCA DEL PRODUCTO
     <br></br>

@@ -153,7 +153,7 @@ $(document).ready(function(){
     </div>
   </aside>
 
-  <a class="button" href="./Comprar.html">Comprar</a>
+  <a class="button" href="./Comprar">Comprar</a>
 
   <br></br>
 

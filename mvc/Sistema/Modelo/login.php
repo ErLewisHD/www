@@ -27,7 +27,7 @@
 		$registro = $stmtPDO->fetch(PDO::FETCH_ASSOC);
 		if ($pass == $registro['password']) {
 			$_SESSION['usuario'] = $registro['nombre'];
-			header("Location: http://localhost/index");
+			header("Location: http://localhost/mvc/Sistema/Vista/index");
 		} else {
 			echo '<center><br><br><br><br>Contraseña incorrecta';
 		}
