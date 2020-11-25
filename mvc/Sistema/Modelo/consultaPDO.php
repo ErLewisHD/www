@@ -1,25 +1,4 @@
 <?php
-	//Dia y hora actual con cookies
-	setcookie("fechaActual",date("d M y"));
-	echo "Fecha actual: ".$_COOKIE["fechaActual"];
-	//Dia y hora ultimo acceso con cookies
-	if(isset($_COOKIE["fechaUltAcceso"])){
-		echo "<br>Fecha ultimo acceso: ".$_COOKIE["fechaUltAcceso"];
-		setcookie("fechaUltAcceso",date("d M y  H:i:s"));
-	}
-	else{
-		echo "Eres el primer acceso";
-		setcookie("fechaUltAcceso",date("d ").date(" M").date(" y").date(" H:").date("i:").date("s"));
-	}
-	//Contador accesos a la página
-	if(isset($_COOKIE["contador"])){
-		//La cookie caduca cada 10 minutos
-		setcookie("contador", $_COOKIE["contador"] + 1, time() + 60 * 10);
-	}
-	else{
-		setcookie('contador', 1, time() + 60 * 10);
-	}
-	echo "<br>Accesos a la página: ".$_COOKIE["contador"];
 
 	require './conexionPDO.php';
 	//Sql con marcadores

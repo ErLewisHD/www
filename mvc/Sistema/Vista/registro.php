@@ -22,7 +22,21 @@ input[type=submit],input[type=reset],input[type=button]{
   cursor: pointer;
 }
 </style>
+<?php
+require once "../../lib/recaptchalib.php";
+//Recaptcha
+$secret = "6LdgFu0ZAAAAALepN1fUDkAYjnAdehxT0dJR5KcI";
+$response = null;
+$reCaptcha = new ReCaptcha($secret);
 
+// if submitted check response
+if ($_POST["g-recaptcha-response"]) {
+		$response = $reCaptcha->verifyResponse(
+				$_SERVER["REMOTE_ADDR"],
+				$_POST["g-recaptcha-response"]
+		);
+}
+ ?>
 <div class="sing_up-page">
 	<div class="form">
 		<form class="register-form" ACTION="../Modelo/registro.php" METHOD="post">
@@ -47,6 +61,7 @@ input[type=submit],input[type=reset],input[type=button]{
 		</form>
 	</div>
 </div>
+
 <script src='https://www.google.com/recaptcha/api.js?hl=es'></script>
 
 <script>
