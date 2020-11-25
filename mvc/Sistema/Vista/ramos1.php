@@ -22,27 +22,27 @@ if(!isset($_SESSION['usuario'])){
   die("No puedes acceder");
 }
 ?>
-<div class="jumbotron text-center" style="background-image: url('IMAGENES_RAMOS/floresfondo.jpg'); background-size: 40% 110%; margin-bottom:auto;">
+<div class="jumbotron text-center" style="background-image: url('../../img/floresfondo.jpg'); background-size: 40% 110%; margin-bottom:auto;">
   <h1>Party Flowers S.A.</h1>
   <p>Tu floristeria online, y cada vez la de más gente</p>
 </div>
 
 
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-  <a class="nav-link" href="../index">Inicio</a>
+  <a class="nav-link" href="./index">Inicio</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="collapsibleNavbar">
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="navbar-brand" href="ramos1.html">Ramos</a>
+        <a class="navbar-brand" href="./ramos1.html">Ramos</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Centros</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="../SanValentin/sanvalentin.html">San Valentín</a>
+        <a class="nav-link" href="./sanvalentin.html">San Valentín</a>
       </li>
 
       <head>
@@ -144,7 +144,7 @@ $(document).ready(function(){
 
 <center>
 <section>
-  <article> <img onmouseover="bigImg(this)" onmouseout="normalImg(this)" src="IMAGENES_RAMOS/ramo1.jpg" alt="ramo2"> </article>
+  <article> <img onmouseover="bigImg(this)" onmouseout="normalImg(this)" src="../../img/ramo1.jpg" alt="ramo2"> </article>
   <aside>
     Ramo de flores de la leche pa to los gustos jejejej ete sech
     <div class="input-group input-group-sm">
@@ -153,14 +153,14 @@ $(document).ready(function(){
     </div>
   </aside>
 
-  <a class="button" href="Comprar.html">Comprar</a>
+  <a class="button" href="./Comprar.html">Comprar</a>
 
   <br></br>
 
 </section>
 
 <section>
-  <article> <img src="IMAGENES_RAMOS/ramo2.jpg" onmouseover="bigImg(this)" onmouseout="normalImg(this)" alt="ramo2"> </article>
+  <article> <img src="../../img/ramo2.jpg" onmouseover="bigImg(this)" onmouseout="normalImg(this)" alt="ramo2"> </article>
   <aside>
       Son de amores (son de amores)
       Amores que matan
@@ -187,9 +187,9 @@ $(document).ready(function(){
 
   <ul  class="pagination justify-content-center">
     <li class="page-item"><a class="page-link" href="#">Anterior</a></li>
-    <li class="page-item active"><a class="page-link" href="ramos1.html">1</a></li>
-    <li class="page-item"><a class="page-link" href="ramos2.html">2</a></li>
-    <li class="page-item"><a class="page-link" href="ramos2.html">Siguiente</a></li>
+    <li class="page-item active"><a class="page-link" href="./ramos1.html">1</a></li>
+    <li class="page-item"><a class="page-link" href="./ramos2.html">2</a></li>
+    <li class="page-item"><a class="page-link" href="./ramos2.html">Siguiente</a></li>
   </ul>
 </div>
 
@@ -218,7 +218,7 @@ $(document).ready(function(){
 </footer>
 
 <audio autoplay loop>
-    <source  src="musica_ramos.mp3" type="audio/mp3">
+    <source  src="../../music/musica_ramos.mp3" type="audio/mp3">
 </audio>
 
 <script>

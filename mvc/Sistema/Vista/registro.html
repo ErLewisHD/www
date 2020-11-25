@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel='stylesheet' href="registro.css">
+	<link rel='stylesheet' href="../../css/registro.css">
 	<title>Registro de un nuevo cliente</title>
 	<meta charset=utf-8 />
 </head>
@@ -25,7 +25,7 @@ input[type=submit],input[type=reset],input[type=button]{
 
 <div class="sing_up-page">
 	<div class="form">
-		<form class="register-form" ACTION="action.php" METHOD="post">
+		<form class="register-form" ACTION="../Modelo/action.php" METHOD="post">
 			<input type="text" size="40" maxlength="60" NAME="nombre" placeholder="Nombre y Apellidos" required /><br><br>
 			<input type="text" NAME="DNI" pattern="^[0-9]{8}[a-zA-Z]{1}$"
 			title="Formato incorrecto, por favor introduzca su dni del tipo: 44556677A" placeholder="Introduzca su DNI" required /><br><br>
@@ -61,7 +61,7 @@ input[type=submit],input[type=reset],input[type=button]{
 	}
 
 	function redirectIndex(){
-		location.replace('index');
+		location.replace('./index.php');
 	}
 </script>
 

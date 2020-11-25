@@ -1,12 +1,12 @@
 <?php
-	require 'conexion.php';
+	require '../conexion.php';
 	$conexion->set_charset('utf8'); //establece el conjunto de caracteres en la conexión, para que no haya problema de acentos y ñ de los campos
-	
+
 	$sql2 = "SELECT * FROM factura";
 	$resultado2 = $conexion->query($sql2);
 	if (!$resultado2) {
 	die("No se puede realizar la consulta $conexion->errno: $conexion->error");
-	}	
+	}
 	// Mostramos una tabla con el resultado de la inserción
 	echo "<center><h1>TABLA FACTURA</h1><br><br>";
 	echo "<center><table border=2><tr><th>Numero Factura</th> <th>Cantidad</th> <th>Fecha Pedido</th> <th>Precio</th> <th>Fecha Pago</th> <th>Codigo articulo</th> <th>Codigo cliente</th></tr>";
@@ -22,7 +22,7 @@
 		echo "</tr>";
 	}
 	echo "</table>";
-	
+
 	$sql1 = "SELECT * FROM articulo";
 	$resultado1 = $conexion->query($sql1);
 	if (!$resultado1) {
@@ -42,7 +42,7 @@
 		echo "</tr>";
 	}
 	echo "</table>";
-	
+
 	$sql = "SELECT * FROM cliente";
 	$resultado = $conexion->query($sql);
 	if (!$resultado) {

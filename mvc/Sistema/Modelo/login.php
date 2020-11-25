@@ -6,7 +6,7 @@
 <body align="center">
 
 <?php
-	require 'conexionPDO.php';
+	require './conexionPDO.php';
 	session_start();
 	//Sql con marcadores
 	$sql = "SELECT * FROM cliente WHERE dni=:dni";

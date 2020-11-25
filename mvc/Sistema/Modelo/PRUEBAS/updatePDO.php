@@ -1,5 +1,5 @@
 <?php
-	require 'conexionPDO.php';
+	require '../conexionPDO.php';
 	//Sql con marcadores
 	$sql = "UPDATE `cliente` SET `dni` = '12345678S' WHERE `cliente`.`codc` = 1";
 	//Preparar

@@ -5,7 +5,6 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <link rel="stylesheet" href="botones.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
@@ -64,13 +63,13 @@
 ?>
 
 <body>
-<div class="jumbotron text-center" style="background-image: url('PESTAÑA_RAMOS/IMAGENES_RAMOS/floresfondo.jpg'); background-size: 40% 110%; margin-bottom:auto;">
+<div class="jumbotron text-center" style="background-image: url('../../img/floresfondo.jpg'); background-size: 40% 110%; margin-bottom:auto;">
   <h1>Party Flowers S.A.</h1>
   <b>Tu floristeria online, y cada vez la de más gente</b>
 </div>
 
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-  <a class="navbar-brand" href="index.php">Inicio</a>
+  <a class="navbar-brand" href="./index.php">Inicio</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -80,13 +79,13 @@
         if(isset($_SESSION['usuario'])){
           echo "
           <li class='nav-item'>
-            <a class='nav-link' href='PESTAÑA_RAMOS/ramos1'>Ramos</a>
+            <a class='nav-link' href='./ramos1'>Ramos</a>
           </li>
           <li class='nav-item'>
             <a class='nav-link' href='#'>Centros</a>
           </li>
           <li class='nav-item'>
-            <a class='nav-link' href='SanValentin/sanvalentin.html'>San Valentín</a>
+            <a class='nav-link' href='./sanvalentin'>San Valentín</a>
           </li>
           <button onclick='logout()'>Cerrar sesion</button>
           ";
@@ -94,10 +93,10 @@
         else{
           echo"
           <li class='nav-item'>
-            <a class='nav-link' href='login.html'>Iniciar sesion</a>
+            <a class='nav-link' href='./login.html'>Iniciar sesion</a>
           </li>
           <li class='nav-item'>
-            <a class='nav-link' href='registro.html'>Registrarse</a>
+            <a class='nav-link' href='./registro.html'>Registrarse</a>
           </li>
           ";
         }
@@ -116,7 +115,8 @@
 
       <h2>¿Donde estamos?</h2>
       <h5>Nos podrás encontrar aqui:</h5>
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3101.3895789236526!2d-1.8560039852783101!3d38.98360424946431!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd665fdcdb5c7bb7%3A0x646e98990feba22f!2sAv.%20de%20Espa%C3%B1a%2C%20Albacete!5e0!3m2!1ses!2ses!4v1603792953061!5m2!1ses!2ses" width="300" height="250" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3101.3895789236526!2d-1.8560039852783101!3d38.98360424946431!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd665fdcdb5c7bb7%3A0x646e98990feba22f!2sAv.%20de%20Espa%C3%B1a%2C%20Albacete!5e0!3m2!1ses!2ses!4v1603792953061!5m2!1ses!2ses"
+      width="300" height="250" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
       <p>Flowers party, tu floristería de confianza</p>
       <p>Encuentranos en la Avenida España, 47, 02002 Albacete</p>
 
@@ -195,7 +195,7 @@ $(document).ready(function(){
 });
 
 function logout(){
-  location.replace('logout.php');
+  location.replace('../Modelo/logout.php');
 }
 
 </script>

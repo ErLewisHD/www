@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html> 
+<html>
 <head>
-<title>Registro completo</title> 
+<title>Registro completo</title>
 <meta charset=utf-8 /> </head>
 <body align="center">
 
 <?php
-require 'conexion.php';
+require './conexion.php';
 	$conexion->set_charset('utf8'); //establece el conjunto de caracteres en la conexión, para que no haya problema de acentos y ñ de los campos
 	$pass = sha1($_POST["password"]);
 	$sql = "INSERT INTO `cliente` (
