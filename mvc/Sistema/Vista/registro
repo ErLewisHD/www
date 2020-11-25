@@ -4,6 +4,7 @@
 	<link rel='stylesheet' href="../../css/registro.css">
 	<title>Registro de un nuevo cliente</title>
 	<meta charset=utf-8 />
+	<script src='https://www.google.com/recaptcha/api.js?hl=es'></script>
 </head>
 <body>
 <style>
@@ -22,21 +23,7 @@ input[type=submit],input[type=reset],input[type=button]{
   cursor: pointer;
 }
 </style>
-<?php
-require once "../../lib/recaptchalib.php";
-//Recaptcha
-$secret = "6LdgFu0ZAAAAALepN1fUDkAYjnAdehxT0dJR5KcI";
-$response = null;
-$reCaptcha = new ReCaptcha($secret);
 
-// if submitted check response
-if ($_POST["g-recaptcha-response"]) {
-		$response = $reCaptcha->verifyResponse(
-				$_SERVER["REMOTE_ADDR"],
-				$_POST["g-recaptcha-response"]
-		);
-}
- ?>
 <div class="sing_up-page">
 	<div class="form">
 		<form class="register-form" ACTION="../Modelo/registro.php" METHOD="post">
@@ -55,14 +42,12 @@ if ($_POST["g-recaptcha-response"]) {
 			<option value="+34">+34</option><option value="+1">+1</option><option value="+33">+33</option><option
 			value="+39">+39</option> <input type="text" name="telefono" pattern="^[0-9]{9}$"
 			title="Formato incorrecto, por favor introduzca su tlf del tipo: 666555111" placeholder="Teléfono de contacto" required /><br><br>
-			</select><br>
-			<div class="g-recaptcha" data-them="dark" data-sitekey="6LdgFu0ZAAAAANW5yzvKXAr1lhxCLSK_YOgB3AOP"></div>
-			<input type="submit" value="Enviar"/><input type="button" value="Cancelar" onclick="redirectIndex()"/>
+			</select>
+			<div class="g-recaptcha" data-them="dark" data-sitekey="6LdSM-0ZAAAAAI5exrUVsTmohmabsal2GqRQB-bJ"></div><br>
+			<input type="submit" value="Enviar"/> <input type="button" value="Cancelar" onclick="redirectIndex()"/>
 		</form>
 	</div>
 </div>
-
-<script src='https://www.google.com/recaptcha/api.js?hl=es'></script>
 
 <script>
 	var p1 = document.getElementById("password");

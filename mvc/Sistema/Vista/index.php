@@ -96,7 +96,7 @@
             <a class='nav-link' href='./login.html'>Iniciar sesion</a>
           </li>
           <li class='nav-item'>
-            <a class='nav-link' href='./registro.html'>Registrarse</a>
+            <a class='nav-link' href='./registro'>Registrarse</a>
           </li>
           ";
         }
