@@ -25,7 +25,7 @@ input[type=submit],input[type=reset],input[type=button]{
 
 <div class="sing_up-page">
 	<div class="form">
-		<form class="register-form" ACTION="../Modelo/action.php" METHOD="post">
+		<form class="register-form" ACTION="../Modelo/registro.php" METHOD="post">
 			<input type="text" size="40" maxlength="60" NAME="nombre" placeholder="Nombre y Apellidos" required /><br><br>
 			<input type="text" NAME="DNI" pattern="^[0-9]{8}[a-zA-Z]{1}$"
 			title="Formato incorrecto, por favor introduzca su dni del tipo: 44556677A" placeholder="Introduzca su DNI" required /><br><br>
@@ -42,10 +42,12 @@ input[type=submit],input[type=reset],input[type=button]{
 			value="+39">+39</option> <input type="text" name="telefono" pattern="^[0-9]{9}$"
 			title="Formato incorrecto, por favor introduzca su tlf del tipo: 666555111" placeholder="Teléfono de contacto" required /><br><br>
 			</select><br>
+			<div class="g-recaptcha" data-them="dark" data-sitekey="6LdgFu0ZAAAAANW5yzvKXAr1lhxCLSK_YOgB3AOP"></div>
 			<input type="submit" value="Enviar"/><input type="button" value="Cancelar" onclick="redirectIndex()"/>
 		</form>
 	</div>
 </div>
+<script src='https://www.google.com/recaptcha/api.js?hl=es'></script>
 
 <script>
 	var p1 = document.getElementById("password");

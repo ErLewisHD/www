@@ -6,13 +6,29 @@
 <body align="center">
 
 <?php
+require once "../../lib/recaptchalib.php";
 require './conexion.php';
+
+	//Recaptcha
+	$secret = "6LdgFu0ZAAAAALepN1fUDkAYjnAdehxT0dJR5KcI";
+	$response = null;
+	$reCaptcha = new ReCaptcha($secret);
+
+	// if submitted check response
+	if ($_POST["g-recaptcha-response"]) {
+	    $response = $reCaptcha->verifyResponse(
+	        $_SERVER["REMOTE_ADDR"],
+	        $_POST["g-recaptcha-response"]
+	    );
+	}
+
+	//Campos para registro
 	$conexion->set_charset('utf8'); //establece el conjunto de caracteres en la conexión, para que no haya problema de acentos y ñ de los campos
 	$pass = sha1($_POST["password"]);
 	$sql = "INSERT INTO `cliente` (
 	`codc`, `dni`, `password`, `nombre`, `direccion`, `tlf`) VALUES (NULL, '$_POST[DNI]', '$pass' , '$_POST[nombre]', '$_POST[direccion]', '$_POST[prefijo].$_POST[telefono]');";
 	$resultado = $conexion->query($sql);
-	if (!$resultado) {
+	if (!$resultado || ($response != null && $response->success)) {
 		echo "<h1>¡¡ERROR FATAL!!</h1>";
 		echo "<h2>Algo no ha ido bien</h2>";
 	die("No se puede realizar el registro (error numero:<b>$conexion->errno</b>): <br><b>$conexion->error</b>");
@@ -25,6 +41,7 @@ require './conexion.php';
 		echo "<b>TLF:</b> "; echo $_POST["prefijo"]; echo " "; echo $_POST["telefono"]; echo "<br>";
 		echo "<b>DIRECCION:</b> "; echo $_POST["direccion"]; echo "<br>";
 	}
+
 ?>
 
 </body>
