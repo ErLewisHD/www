@@ -63,7 +63,7 @@
 ?>
 
 <body>
-<div class="jumbotron text-center" style="background-image: url('../../img/floresfondo.jpg'); background-size: 40% 110%; margin-bottom:auto;">
+<div class="jumbotron text-center" style="background-image: url('./mvc/img/floresfondo.jpg'); background-size: 40% 110%; margin-bottom:auto;">
   <h1>Party Flowers S.A.</h1>
   <b>Tu floristeria online, y cada vez la de más gente</b>
 </div>
@@ -79,13 +79,13 @@
         if(isset($_SESSION['usuario'])){
           echo "
           <li class='nav-item'>
-            <a class='nav-link' href='./ramos1'>Ramos</a>
+            <a class='nav-link' href='./mvc/Sistema/Vista/ramos1'>Ramos</a>
           </li>
           <li class='nav-item'>
             <a class='nav-link' href='#'>Centros</a>
           </li>
           <li class='nav-item'>
-            <a class='nav-link' href='./sanvalentin'>San Valentín</a>
+            <a class='nav-link' href='./mvc/Sistema/Vista/sanvalentin'>San Valentín</a>
           </li>
           <button onclick='logout()'>Cerrar sesion</button>
           ";
@@ -93,10 +93,10 @@
         else{
           echo"
           <li class='nav-item'>
-            <a class='nav-link' href='./login.html'>Iniciar sesion</a>
+            <a class='nav-link' href='./mvc/Sistema/Vista/login.html'>Iniciar sesion</a>
           </li>
           <li class='nav-item'>
-            <a class='nav-link' href='./registro'>Registrarse</a>
+            <a class='nav-link' href='./mvc/Sistema/Vista/registro'>Registrarse</a>
           </li>
           ";
         }
@@ -195,7 +195,7 @@ $(document).ready(function(){
 });
 
 function logout(){
-  location.replace('../Modelo/logout.php');
+  location.replace('./mvc/Sistema/Modelo/logout.php');
 }
 
 </script>
