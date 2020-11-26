@@ -2,6 +2,6 @@
 require '../Modelo/login.php';
 $login= new login_modelo();
 $usuario = $login->getUsuario($_POST["dni"]);
-require '../Vista/errorLogin';
+require '../Vista/errorLogin.php';
 
 ?>
