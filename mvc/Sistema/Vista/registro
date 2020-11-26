@@ -63,7 +63,7 @@ input[type=submit],input[type=reset],input[type=button]{
 	}
 
 	function redirectIndex(){
-		location.replace('../../../index.php');
+		location.replace('./index.php');
 	}
 </script>
 
