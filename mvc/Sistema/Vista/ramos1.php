@@ -36,7 +36,7 @@ if(!isset($_SESSION['usuario'])){
   <div class="collapse navbar-collapse" id="collapsibleNavbar">
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="navbar-brand" href="./ramos1.html">Ramos</a>
+        <a class="navbar-brand" href="./ramos1.php">Ramos</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Centros</a>
