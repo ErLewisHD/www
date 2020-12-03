@@ -44,6 +44,7 @@ if(!isset($_SESSION['usuario'])){
       <li class="nav-item">
         <a class="nav-link" href="./sanvalentin.html">San Valentín</a>
       </li>
+      <button onclick='logout()'>Cerrar sesion</button>
 
       <head>
       <style>
@@ -90,6 +91,12 @@ $(document).ready(function(){
     $("#panel").slideToggle("slow");
   });
 });
+</script>
+
+<script>
+function logout(){
+  location.replace('../Modelo/logout.php');
+}
 </script>
 
 <script>
