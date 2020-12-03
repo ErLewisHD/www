@@ -11,11 +11,15 @@
 
 <body align='center'>
 	<?php
-		//Este PHP tiene que obtener lo que devuelve el controlador y en caso de error
-		//llamar a la función mostrarError();
-		if($salida == 1){
-			echo "Error";
-		}
+	if(isset ($_POST["dni"]) && isset ($_POST["password"])){
+		require '../Controlador/login.php';
+			//Este PHP tiene que obtener lo que devuelve el controlador y en caso de error
+			//llamar a la función mostrarError();
+			$salida = loginController($_POST["dni"], $_POST["password"]);
+			if($salida == 1){
+				echo "Error";
+			}
+	}
 	 ?>
 	<style>
 		input[type=submit],input[type=reset], input[type=button]{
@@ -38,7 +42,7 @@
 	<div class="login-page">
 	  <div class="form">
 			<h1 align='center'>Iniciar sesión</h1>
-	    <form action="../Controlador/login.php" method="post" class="login-form">
+	    <form action="" method="post" class="login-form">
 	      <input type="text" NAME="dni" pattern="^[0-9]{8}[a-zA-Z]{1}$" title="Formato incorrecto, por favor introduzca su dni del tipo: 44556677A"
 		  placeholder="Introduza su DNI" required />
 	      <input type="password" NAME="password" placeholder="Contraseña" required />

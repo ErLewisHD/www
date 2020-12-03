@@ -1,10 +1,9 @@
 <?php
 require conexion.php;
-
+$stmtPDO = NULL;
 class Cliente{
   private $bd;
-
-  $usuario;
+  private $pass;
 
   public function __construct(){
     require 'conexionPDO.php';
@@ -15,7 +14,8 @@ class Cliente{
   public function getUsuario($dni){
     $sql = "SELECT * FROM cliente WHERE dni=:dni";
 
-    global $stmtPDO = $this->bd->prepare($sql);
+    global $stmtPDO;
+    $stmtPDO = $this->bd->prepare($sql);
     global $resultado = $stmtPDO->execute(array(':dni' => $dni));
 
     if (!$resultado) {
@@ -32,6 +32,7 @@ class Cliente{
   }
 
   public function comprobarContraseña($password){
+    global $stmtPDO;
     $registro = $stmtPDO->fetch(PDO::FETCH_ASSOC);
     $pass = sha1($password);
 
