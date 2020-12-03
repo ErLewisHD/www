@@ -6,6 +6,6 @@ $salida = 1;
 if($usuario != 1 && $usuario != 2){
   $salida = $login->comprobarContraseña($_POST["password"]);
 }
-require '../Vista/errorLogin.php';
+require '../Vista/login.php';
 
 ?>
