@@ -43,7 +43,9 @@ input[type=submit],input[type=reset], input[type=button]{
 <?php
 	//Este PHP tiene que obtener lo que devuelve el controlador y en caso de error
 	//llamar a la función mostrarError();
-	echo "<button onclick='mostrarError()'>mostrarError</button>";
+	if($salida != null){
+		echo "Existe";
+	}
  ?>
 
 <script>
@@ -53,6 +55,7 @@ function redirectIndex(){
 
 function mostrarError() {
   document.getElementById("error").style.display = "block";
+
 }
 </script>
 
