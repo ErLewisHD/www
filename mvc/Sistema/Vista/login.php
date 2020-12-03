@@ -43,8 +43,8 @@ input[type=submit],input[type=reset], input[type=button]{
 <?php
 	//Este PHP tiene que obtener lo que devuelve el controlador y en caso de error
 	//llamar a la función mostrarError();
-	if($salida != null){
-		echo "Existe";
+	if($salida == 1){
+		echo "Error";
 	}
  ?>
 
