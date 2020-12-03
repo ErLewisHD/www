@@ -4,6 +4,7 @@
 	<link rel='stylesheet' href="../../css/login1.css">
 	<title>Inicio de sesión de un cliente</title>
 	<meta charset=utf-8 />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 
 <body align='center'>
@@ -24,22 +25,34 @@ input[type=submit],input[type=reset], input[type=button]{
 }
 </style>
 
+
 <div class="login-page">
   <div class="form">
-		<h2 align='center'>Iniciar sesión</h2>
+		<h1 align='center'>Iniciar sesión</h1>
     <form action="../Controlador/login.php" method="post" class="login-form">
       <input type="text" NAME="dni" pattern="^[0-9]{8}[a-zA-Z]{1}$" title="Formato incorrecto, por favor introduzca su dni del tipo: 44556677A"
 	  placeholder="Introduza su DNI" required />
       <input type="password" NAME="password" placeholder="Contraseña" required />
+			<p id="error" style="display:none">Usuario y/o contraseña incorrectos</p><br>
       <input type="submit" value="Acceder"/> <input type="button" value="Cancelar" onclick="redirectIndex()"/>
       <p class="message">¿No tienes una cuenta con nosotros? <a href="./registro">Regístrarse</a></p>
     </form>
   </div>
 </div>
 
+<?php
+	//Este PHP tiene que obtener lo que devuelve el controlador y en caso de error
+	//llamar a la función mostrarError();
+	echo "<button onclick='mostrarError()'>mostrarError</button>";
+ ?>
+
 <script>
 function redirectIndex(){
 	location.replace('./index');
+}
+
+function mostrarError() {
+  document.getElementById("error").style.display = "block";
 }
 </script>
 
