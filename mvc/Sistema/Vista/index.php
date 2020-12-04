@@ -200,6 +200,62 @@ function logout(){
 
 </script>
 
+
+
+<script>
+    var cont = 0;
+    var x;
+    loadDoc(cont);
+
+    function loadDoc(cont) {
+        var xhttp;
+        if (window.XMLHttpRequest) {
+            xhttp = new XMLHttpRequest();
+        } else {
+            // crear objeto para navegadores IE5 e IE6
+            xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                muestraDatos(this, cont);
+            }
+        };
+        xhttp.open("GET", "XMLEjercicio2.xml", true);
+        xhttp.send();
+    }
+
+    function muestraDatos(xml, cont) {
+        var xmlDoc = xml.responseXML;
+        x = xmlDoc.getElementsByTagName("LIBRO");
+        document.getElementById("infoLibro").innerHTML =
+            "<img src=" + x[cont].getElementsByTagName("IMAGEN")[0].childNodes[0].nodeValue + "><h3>" +
+            x[cont].getElementsByTagName("TITULO")[0].childNodes[0].nodeValue + "<h3>" +
+            x[cont].getElementsByTagName("ORIGEN")[0].childNodes[0].nodeValue + "<h3>" +
+            x[cont].getElementsByTagName("COLOR")[0].childNodes[0].nodeValue + "<h3>" +
+            x[cont].getElementsByTagName("PRECIO")[0].childNodes[0].nodeValue + "<h3>" ;
+    }
+
+    //Generador num aleatorio
+    function azar() {
+        cont = Math.floor((Math.random() * x.length) + 0);
+        loadDoc(cont);
+    }
+</script>
+
+<body>
+    <center>
+        <h1>¿No sabes que comprar?</h1>
+        <h2>Aquí te reomendamos algunos de nuestros productos: </h2>
+        <div id='infoLibro'></div><br>
+        <input type="button" onclick="azar()" value="Recomiendame una Flor">
+    </center>
+</body>
+
+
+
+
+
+
 <footer class="jumbotron text-center" style="margin-bottom:0">
   Pie de página <br>
   <span align="center" class="ir-arriba icon-arrow-up2"></span><br><br>
@@ -227,6 +283,7 @@ function logout(){
     }
   ?>
 </footer>
+
 
 
 </body>
