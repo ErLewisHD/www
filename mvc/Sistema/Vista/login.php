@@ -4,7 +4,6 @@
 	<link rel='stylesheet' href="../../css/login1.css">
 	<title>Inicio de sesión de un cliente</title>
 	<meta charset=utf-8 />
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 
 <body align='center'>
@@ -29,14 +28,15 @@
 		require '../Controlador/login.php';
 		if(isset ($_POST["dni"]) && isset ($_POST["password"])){
 			$salida = loginController($_POST["dni"], $_POST["password"]);
-			if($salida == 2){
-				echo "Error en la consulta";
-			}
-			else if($salida == 1){
-				echo "Usuario y/o contraseña incorrectos";
-			}
-			else{
+			if($salida == '0'){
 				header('Location: ./index.php');
+			}
+			else if($salida == '1'){
+				echo "<p id='error'></p>";
+			}
+			else if($salida == '404'){
+				echo "<p id='error404'></p>";
+				echo "Error en la consulta";
 			}
 		}
 	?>
@@ -48,7 +48,7 @@
 	      <input type="text" NAME="dni" pattern="^[0-9]{8}[a-zA-Z]{1}$" title="Formato incorrecto, por favor introduzca su dni del tipo: 44556677A"
 		  placeholder="Introduza su DNI" required />
 	      <input type="password" NAME="password" placeholder="Contraseña" required />
-				<p id="error" style="display:none">Usuario y/o contraseña incorrectos</p><br>
+				<p id="mensajeError" style="display:none">Usuario y/o contraseña incorrectos</p><br>
 	      <input type="submit" value="Acceder"/> <input type="button" value="Cancelar" onclick="redirectIndex()"/>
 	      <p class="message">¿No tienes una cuenta con nosotros? <a href="./registro">Regístrarse</a></p>
 	    </form>
@@ -60,8 +60,11 @@
 			location.replace('./index');
 		}
 
-		function mostrarError() {
-		  document.getElementById("error").style.display = "block";
+		if(document.getElementById("error")){
+		  document.getElementById("mensajeError").style.display = "block";
+		}
+		if(document.getElementById("error404")){
+		  location.replace('./error.html');
 		}
 	</script>
 </body>

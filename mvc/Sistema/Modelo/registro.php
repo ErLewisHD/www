@@ -14,13 +14,7 @@ require "../../lib/recaptchalib.php";
 	$response = null;
 	$reCaptcha = new ReCaptcha($secret);
 
-	// if submitted check response
-	if ($_POST["g-recaptcha-response"]) {
-			$response = $reCaptcha->verifyResponse(
-					$_SERVER["REMOTE_ADDR"],
-					$_POST["g-recaptcha-response"]
-			);
-	}else {die("Recaptcha vacio");}
+
 
 	//Campos para registro
 	$conexion->set_charset('utf8'); //establece el conjunto de caracteres en la conexión, para que no haya problema de acentos y ñ de los campos
