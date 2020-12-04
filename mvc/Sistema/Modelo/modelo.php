@@ -1,49 +1,36 @@
 <?php
-require conexion.php;
-$stmtPDO = NULL;
-class Cliente{
-  private $bd;
-  private $pass;
+require 'conexion.php';
 
+class Cliente{
   public function __construct(){
-    require 'conexionPDO.php';
-    $this->bd= $conexionPDO;
     session_start();
   }
 
   public function getUsuario($dni){
-    $sql = "SELECT * FROM cliente WHERE dni=:dni";
-
-    global $stmtPDO;
-    $stmtPDO = $this->bd->prepare($sql);
-    global $resultado = $stmtPDO->execute(array(':dni' => $dni));
+    require 'conexionPDO.php';
+    $sql = 'SELECT * FROM cliente WHERE dni = :dni';
+    $stmtPDO = $conexionPDO->prepare($sql);
+    $resultado = $stmtPDO->execute(array(':dni' => $dni));
 
     if (!$resultado) {
-      $salida= 1;
+      return 2;
     }
     else if($stmtPDO->rowCount() == 0){
-      $salida =2;
+      return 1;
     }
     else {
-      $salida = $resultado;
+      return $resultado;
     }
-
-    return $salida;
   }
 
-  public function comprobarContraseña($password){
-    global $stmtPDO;
-    $registro = $stmtPDO->fetch(PDO::FETCH_ASSOC);
+  public function comprobarContraseña($usuario,$password){
     $pass = sha1($password);
-
-    if ($pass == $registro['password']) {
-      $_SESSION['usuario'] = $registro['nombre'];
-      $salida = 0;
-    } else {
-      $salida = 1;
+    if ($pass == $usuario['password']) {
+      $_SESSION['usuario'] = $usuario['nombre'];
+      return 0;
+    } else{
+      return 1;
     }
-
-    return $salida;
   }
 };
 

@@ -7,20 +7,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 
-
-
 <body align='center'>
-	<?php
-	if(isset ($_POST["dni"]) && isset ($_POST["password"])){
-		require '../Controlador/login.php';
-			//Este PHP tiene que obtener lo que devuelve el controlador y en caso de error
-			//llamar a la función mostrarError();
-			$salida = loginController($_POST["dni"], $_POST["password"]);
-			if($salida == 1){
-				echo "Error";
-			}
-	}
-	 ?>
 	<style>
 		input[type=submit],input[type=reset], input[type=button]{
 		  font-family: "Roboto", sans-serif;
@@ -38,11 +25,26 @@
 		}
 	</style>
 
+	<?php
+		require '../Controlador/login.php';
+		if(isset ($_POST["dni"]) && isset ($_POST["password"])){
+			$salida = loginController($_POST["dni"], $_POST["password"]);
+			if($salida == 2){
+				echo "Error al acceder a la base de datos";
+			}
+			else if($salida == 1){
+				echo "Usuario y/o contraseña incorrectos";
+			}
+			else{
+				header('Location: ./index.php');
+			}
+		}
+	?>
 
 	<div class="login-page">
 	  <div class="form">
 			<h1 align='center'>Iniciar sesión</h1>
-	    <form action="" method="post" class="login-form">
+	    <form action="./login.php" method="post" class="login-form">
 	      <input type="text" NAME="dni" pattern="^[0-9]{8}[a-zA-Z]{1}$" title="Formato incorrecto, por favor introduzca su dni del tipo: 44556677A"
 		  placeholder="Introduza su DNI" required />
 	      <input type="password" NAME="password" placeholder="Contraseña" required />
@@ -60,7 +62,6 @@
 
 		function mostrarError() {
 		  document.getElementById("error").style.display = "block";
-
 		}
 	</script>
 </body>
