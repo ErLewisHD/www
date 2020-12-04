@@ -1,9 +1,9 @@
 <?php
 
-	$sql= "SELECT concat('<row>
+	$sql= "SELECT CONCAT('<row>
                 <nombre>',nombre,'</nombre>',
                 '<pvp>',pvp,'<pvp>',
                 '<color>',color,'<color>
-                <row>') as '<datos>' from articulo into outfile 'catalogoRamos.xml' ";
+                <row>') AS '<datos>' FROM articulo INTO OUTFILE 'C:\wamp64\www\mvc\Sistema\Controlador\catalogoRamos.xml' ";
 
 ?>
