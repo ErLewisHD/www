@@ -8,7 +8,7 @@ class Cliente{
 
   public function getUsuario($dni){
     require 'conexionPDO.php';
-    $sql = 'SELECT * FROM cliente WHERE dni = :dni';
+    $sql = "SELECT * FROM cliente WHERE dni = :dni";
     $stmtPDO = $conexionPDO->prepare($sql);
     $resultado = $stmtPDO->execute(array(':dni' => $dni));
 

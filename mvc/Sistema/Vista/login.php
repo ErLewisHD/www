@@ -30,7 +30,7 @@
 		if(isset ($_POST["dni"]) && isset ($_POST["password"])){
 			$salida = loginController($_POST["dni"], $_POST["password"]);
 			if($salida == 2){
-				echo "Error al acceder a la base de datos";
+				echo "Error en la consulta";
 			}
 			else if($salida == 1){
 				echo "Usuario y/o contraseña incorrectos";
