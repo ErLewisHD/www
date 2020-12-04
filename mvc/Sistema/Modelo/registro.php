@@ -21,12 +21,7 @@ require "../../lib/recaptchalib.php";
 		die("No se puede realizar el registro (error numero:<b>$conexion->errno</b>): <br><b>$conexion->error</b>");
 	}
 	else{
-		echo "<h1>¡¡Bienvenido/a "; echo $_POST["nombre"]; echo "!!</h1><br>";
-		echo "<h2>GRACIAS POR CONFIAR EN NOSOTROS</h2>";
-		echo "<h2>Tu registro ha sido completado con los siguientes datos</h2><br>";
-		echo "<b>DNI:</b> "; echo $_POST["DNI"]; echo "<br>";
-		echo "<b>TLF:</b> "; echo $_POST["prefijo"]; echo " "; echo $_POST["telefono"]; echo "<br>";
-		echo "<b>DIRECCION:</b> "; echo $_POST["direccion"]; echo "<br>";
+		header('Location: ../Vista/login.php');
 	}
 
 ?>
