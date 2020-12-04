@@ -15,7 +15,6 @@ require "../../lib/recaptchalib.php";
 	$reCaptcha = new ReCaptcha($secret);
 
 
-
 	//Campos para registro
 	$conexion->set_charset('utf8'); //establece el conjunto de caracteres en la conexión, para que no haya problema de acentos y ñ de los campos
 	$pass = sha1($_POST["password"]);
