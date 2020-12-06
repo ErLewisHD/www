@@ -25,7 +25,7 @@
 	</style>
 
 	<?php
-		require '../Controlador/login.php';
+		require '../Controlador/controlador.php';
 		if(isset ($_POST["dni"]) && isset ($_POST["password"])){
 			$salida = loginController($_POST["dni"], $_POST["password"]);
 			if($salida == '0'){

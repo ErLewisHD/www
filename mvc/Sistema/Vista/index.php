@@ -96,7 +96,7 @@
             <a class='nav-link' href='./login.php'>Iniciar sesion</a>
           </li>
           <li class='nav-item'>
-            <a class='nav-link' href='./registro'>Registrarse</a>
+            <a class='nav-link' href='./registro.php'>Registrarse</a>
           </li>
           ";
         }

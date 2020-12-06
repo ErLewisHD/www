@@ -10,6 +10,22 @@ class Cliente{
     session_start();
   }
 
+  public function newUser($dni, $pass, $nombre, $dir, $prefijo, $tlf){
+  	$passHash = sha1($pass);
+    //Consulta
+  	$sql = "INSERT INTO `cliente` (
+  	`codc`, `dni`, `password`, `nombre`, `direccion`, `tlf`)
+    VALUES (NULL, '$dni', '$passHash', '$nombre', '$dir', '$prefijo.$tlf');";
+
+  	$resultado = $this->bd->query($sql);
+  	if (!$resultado) {
+      return 1;
+  	}
+  	else{
+      return 0;
+  	}
+  }
+
   public function getUsuario($dni){
     $sql = "SELECT * FROM cliente WHERE dni = :dni";
     $stmtPDO = $this->bd->prepare($sql);
@@ -39,6 +55,8 @@ class Cliente{
       return 1;
     }
   }
+
+
 };
 
 class Artiuclo{

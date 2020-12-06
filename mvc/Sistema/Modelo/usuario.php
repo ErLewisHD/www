@@ -12,6 +12,4 @@ function login(){
   $pass = sha1($_POST['password']);
   $resultado = $stmtPDO->execute(array(':dni' => $dni));
 }
-
-
- ?>
+?>
