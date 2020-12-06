@@ -16,12 +16,18 @@
   </style>
 </head>
 <body>
+
+
 <?php
 session_start();
 if(!isset($_SESSION['usuario'])){
   die("No puedes acceder");
 }
+
+require '../Controlador/crearCatalogoXML.php';
 ?>
+
+
 <div class="jumbotron text-center" style="background-image: url('../../img/floresfondo.jpg'); background-size: 40% 110%; margin-bottom:auto;">
   <h1>Party Flowers S.A.</h1>
   <p>Tu floristeria online, y cada vez la de más gente</p>
