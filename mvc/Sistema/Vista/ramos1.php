@@ -50,7 +50,7 @@ require '../Controlador/crearCatalogoXML.php';
       <li class="nav-item">
         <a class="nav-link" href="./sanvalentin.html">San Valentín</a>
       </li>
-      <button onclick='logout()'>Cerrar sesion</button>
+
 
       <head>
       <style>
@@ -73,17 +73,20 @@ require '../Controlador/crearCatalogoXML.php';
       }
       </style>
       </head>
-      <body>
-
-
-
       <form>
         <input type="text" name="search" placeholder="Search..">
       </form>
 
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;
+
+      <button onclick='logout()'>Cerrar sesion</button>
       </body>
-
-
     </ul>
   </div>
 </nav>

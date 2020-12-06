@@ -93,6 +93,15 @@
         else{
           echo"
           <li class='nav-item'>
+            <a class='nav-link' onclick='funcionBloqueada()'>Ramos</a>
+          </li>
+          <li class='nav-item'>
+            <a class='nav-link' onclick='funcionBloqueada()'>Centros</a>
+          </li>
+          <li class='nav-item'>
+            <a class='nav-link' onclick='funcionBloqueada()'>San Valentín</a>
+          </li>
+          <li class='nav-item'>
             <a class='nav-link' href='./login.php'>Iniciar sesion</a>
           </li>
           <li class='nav-item'>
@@ -104,6 +113,7 @@
     </ul>
   </div>
 </nav>
+<p id="mensajeBloqueo" style="display:none">Funcion bloqueada, regístrate o inicia sesión para acceder a ella </p>
 
 <div class="container" style="margin-top:30px">
   <div class="row">
@@ -196,6 +206,10 @@ $(document).ready(function(){
 
 function logout(){
   location.replace('../Modelo/logout.php');
+}
+
+function funcionBloqueada(){
+  document.getElementById("mensajeBloqueo").style.display = "block";
 }
 
 </script>
