@@ -67,29 +67,32 @@ class Articulo{
         $this->bd= $conexionPDO;
       }
 
+      public function catalogoXML(){
+
       //consultas
       $sql = "SELECT * FROM articulo WHERE ctd > 0";
-      $bdArticulos = $this->$bd->prepare($sql);
+      $bdArticulos = $bd->prepare($sql);
 
       //buscar los articulos
       $bdArticulos->execute();
-      $articulos=$bdArticulos->fetchAll(PDO::FETCH_ASSOC);
+      $articulos = $bdArticulos->fetchAll(PDO::FETCH_ASSOC);
 
 
-      $x=new XMLWriter();
-      $x->openMemory();
-      $x->startDocument('1.0','UTF-8');
-      $x->startElement('flores');
+      $x = new XMLWriter();
+      $x -> openMemory();
+      $x -> startDocument('1.0','UTF-8');
+      $x -> startElement('flores');
 
       foreach ($articulos as $articulo) {
 
-        $x->startElement('articulo');
-        $x->writeAttribute('nombre',$articulo['articulo']);
-        $x->endElement();//articulo
+        $x -> startElement('articulo');
+        $x -> writeAttribute('nombre',$articulo['articulo']);
+        $x -> endElement();//articulo
     }
       $x->endElement();//flores
       $x->endDocument();
       $xml = $x->outputMemory();
+}
 }
 
 class Factura{
