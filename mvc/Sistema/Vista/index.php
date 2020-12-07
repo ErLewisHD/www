@@ -36,15 +36,6 @@
 </head>
 
 <?php
-	session_start();
-	if (isset($_SESSION['usuario'])) {
-		echo "<h2>Estoy aqui con mi compa el  " .$_SESSION['usuario'] ."</h2>";
-	} else {
-		echo "<h2>Inicia sesión para ver todas las funciones</h2>";
-	}
-?>
-
-<?php
   //Dia y hora actual con cookies
   if(!isset($_COOKIE["fechaActual"])){
     setcookie("fechaActual",date("d M Y"));
@@ -76,44 +67,50 @@
   <div class="collapse navbar-collapse" id="collapsibleNavbar">
     <ul class="navbar-nav">
       <?php
+        session_start();
         if(isset($_SESSION['usuario'])){
           echo "
-          <li class='nav-item'>
-            <a class='nav-link' href='./ramos1'>Ramos</a>
-          </li>
-          <li class='nav-item'>
-            <a class='nav-link' href='#'>Centros</a>
-          </li>
-          <li class='nav-item'>
-            <a class='nav-link' href='./sanvalentin'>San Valentín</a>
-          </li>
-          <button onclick='logout()'>Cerrar sesion</button>
+              <li class='nav-item'>
+                <a class='nav-link' href='./ramos1'>Ramos</a>
+              </li>
+              <li class='nav-item'>
+                <a class='nav-link' href='#'>Centros</a>
+              </li>
+              <li class='nav-item'>
+                <a class='nav-link' href='./sanvalentin'>San Valentín</a>
+              </li>
+              <button onclick='logout()'>Cerrar sesion</button>
+              </ul>
+            </div>
+          </nav>
+          <p>Estoy aqui con mi compa el  " .$_SESSION['usuario'] ."</p>
           ";
         }
         else{
           echo"
-          <li class='nav-item'>
-            <a class='nav-link' onclick='funcionBloqueada()'>Ramos</a>
-          </li>
-          <li class='nav-item'>
-            <a class='nav-link' onclick='funcionBloqueada()'>Centros</a>
-          </li>
-          <li class='nav-item'>
-            <a class='nav-link' onclick='funcionBloqueada()'>San Valentín</a>
-          </li>
-          <li class='nav-item'>
-            <a class='nav-link' href='./login.php'>Iniciar sesion</a>
-          </li>
-          <li class='nav-item'>
-            <a class='nav-link' href='./registro.php'>Registrarse</a>
-          </li>
+              <li class='nav-item'>
+                <a class='nav-link' onclick='funcionBloqueada()'>Ramos</a>
+              </li>
+              <li class='nav-item'>
+                <a class='nav-link' onclick='funcionBloqueada()'>Centros</a>
+              </li>
+              <li class='nav-item'>
+                <a class='nav-link' onclick='funcionBloqueada()'>San Valentín</a>
+              </li>
+              <li class='nav-item'>
+                <a class='nav-link' href='./login.php'>Iniciar sesion</a>
+              </li>
+              <li class='nav-item'>
+                <a class='nav-link' href='./registro.php'>Registrarse</a>
+              </li>
+              </ul>
+            </div>
+          </nav>
+          <p id='mensajeBloqueo' style='display:none'>Funcion bloqueada, regístrate o inicia sesión para acceder a ella </p>
           ";
         }
       ?>
-    </ul>
-  </div>
-</nav>
-<p id="mensajeBloqueo" style="display:none">Funcion bloqueada, regístrate o inicia sesión para acceder a ella </p>
+
 
 <div class="container" style="margin-top:30px">
   <div class="row">
