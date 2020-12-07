@@ -24,7 +24,6 @@ input[type=submit],input[type=reset],input[type=button]{
 </style>
 
 <?php
-//$dni, $$pass, $nombre, $dir, $prefijo, $tlf
 	require '../Controlador/controlador.php';
 
 	if(isset ($_POST["dni"]) && isset ($_POST["password"]) && isset ($_POST["nombre"])
