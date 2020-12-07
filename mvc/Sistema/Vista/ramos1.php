@@ -19,12 +19,21 @@
 
 
 <?php
-session_start();
-if(!isset($_SESSION['usuario'])){
-  die("No puedes acceder");
-}
+  require '../Controlador/controlador.php';
+  session_start();
+  if(!isset($_SESSION['usuario'])){
+    die("No puedes acceder");
+  }
 
-require '../Controlador/crearCatalogoXML.php';
+  $resultado = crearCatalogoXML();
+  if($resultado == 404){
+    header('Location: ./error.html');
+  }
+  else if($resultado == 0){
+    header('Location: ./index.php');;
+  }
+
+
 ?>
 
 

@@ -2,7 +2,6 @@
 
 class Cliente{
   private $bd;
-  public $error;
 
   public function __construct(){
     require 'conexionPDO.php';
@@ -59,9 +58,26 @@ class Cliente{
 
 };
 
-class Artiuclo{
+class Articulo{
+  private $bd;
 
-};
+  public function __construct(){
+    require 'conexionPDO.php';
+    $this->bd= $conexionPDO;
+  }
+
+  public function catalogoXML(){
+    $sql = "SELECT CONCAT('<row><nombre>',nombre,'</nombre>''<pvp>',pvp,'</pvp>''<color>',color,'</color></row>')
+    AS '<datos>' FROM articulo INTO OUTFILE '../Controlador/catalogoRamos.xml';";
+    $resultado = $this->bd->query($sql);
+    if (!$resultado) {
+      return 404;
+    }
+    else{
+      return 0;
+    }
+  }
+}
 
 class Factura{
 

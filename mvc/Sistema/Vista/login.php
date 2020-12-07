@@ -35,8 +35,7 @@
 				echo "<p id='error'></p>";
 			}
 			else if($salida == '404'){
-				echo "<p id='error404'></p>";
-				echo "Error en la consulta";
+				header('Location: ./error.html');
 			}
 		}
 	?>
@@ -62,9 +61,6 @@
 
 		if(document.getElementById("error")){
 		  document.getElementById("mensajeError").style.display = "block";
-		}
-		if(document.getElementById("error404")){
-		  location.replace('./error.html');
 		}
 	</script>
 </body>

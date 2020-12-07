@@ -24,4 +24,15 @@ function registerController($dni, $pass, $nombre, $dir, $prefijo, $tlf){
   return $resultado;
 }
 
+function crearCatalogoXML(){
+  $catalogo = new Articulo();
+  $resultado = $catalogo -> catalogoXML();
+  if($resultado == 404){
+    return 404;
+  }
+  else if($resultado == 0){
+    return 0;
+  }
+}
+
 ?>
