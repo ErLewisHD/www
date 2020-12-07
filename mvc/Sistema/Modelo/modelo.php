@@ -59,25 +59,37 @@ class Cliente{
 };
 
 class Articulo{
-  /*private $bd;
 
-  public function __construct(){
-    require 'conexionPDO.php';
-    $this->bd= $conexionPDO;
-  }
+      private $bd;
 
-  public function exportCatalogXML(){
-    $sql = "SELECT * FROM articulo FOR XML AUTO;"
-    //$sql = "SELECT CONCAT('<row><nombre>',nombre,'</nombre>''<pvp>',pvp,'</pvp>''<color>',color,'</color></row>')
-    //AS '<datos>' FROM articulo INTO OUTFILE '../Controlador/catalogoRamos.xml';";
-    $resultado = $this->bd->query($sql);
-    if (!$resultado) {
-      return 404;
+      public function __construct(){
+        require 'conexionPDO.php';
+        $this->bd= $conexionPDO;
+      }
+
+      //consultas
+      $sql = "SELECT * FROM articulo WHERE ctd > 0";
+      $bdArticulos = $this->$bd->prepare($sql);
+
+      //buscar los articulos
+      $bdArticulos->execute();
+      $articulos=$bdArticulos->fetchAll(PDO::FETCH_ASSOC);
+
+
+      $x=new XMLWriter();
+      $x->openMemory();
+      $x->startDocument('1.0','UTF-8');
+      $x->startElement('flores');
+
+      foreach ($articulos as $articulo) {
+
+        $x->startElement('articulo');
+        $x->writeAttribute('nombre',$articulo['articulo']);
+        $x->endElement();//articulo
     }
-    else{
-      return 0;
-    }
-  */
+      $x->endElement();//flores
+      $x->endDocument();
+      $xml = $x->outputMemory();
 }
 
 class Factura{
