@@ -205,7 +205,7 @@ $(document).ready(function(){
 });
 
 function logout(){
-  location.replace('../Modelo/logout.php');
+  location.replace('../Vista/logout.php');
 }
 
 function funcionBloqueada(){

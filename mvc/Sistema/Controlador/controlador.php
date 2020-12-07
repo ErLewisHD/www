@@ -26,7 +26,7 @@ function registerController($dni, $pass, $nombre, $dir, $prefijo, $tlf){
 
 function crearCatalogoXML(){
   $catalogo = new Articulo();
-  $resultado = $catalogo -> catalogoXML();
+  $resultado = $catalogo -> exportCatalogXML();
   if($resultado == 404){
     return 404;
   }

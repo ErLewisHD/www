@@ -59,16 +59,17 @@ class Cliente{
 };
 
 class Articulo{
-  private $bd;
+  /*private $bd;
 
   public function __construct(){
     require 'conexionPDO.php';
     $this->bd= $conexionPDO;
   }
 
-  public function catalogoXML(){
-    $sql = "SELECT CONCAT('<row><nombre>',nombre,'</nombre>''<pvp>',pvp,'</pvp>''<color>',color,'</color></row>')
-    AS '<datos>' FROM articulo INTO OUTFILE '../Controlador/catalogoRamos.xml';";
+  public function exportCatalogXML(){
+    $sql = "SELECT * FROM articulo FOR XML AUTO;"
+    //$sql = "SELECT CONCAT('<row><nombre>',nombre,'</nombre>''<pvp>',pvp,'</pvp>''<color>',color,'</color></row>')
+    //AS '<datos>' FROM articulo INTO OUTFILE '../Controlador/catalogoRamos.xml';";
     $resultado = $this->bd->query($sql);
     if (!$resultado) {
       return 404;
@@ -76,7 +77,7 @@ class Articulo{
     else{
       return 0;
     }
-  }
+  */
 }
 
 class Factura{
