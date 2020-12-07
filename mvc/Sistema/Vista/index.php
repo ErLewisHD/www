@@ -30,8 +30,6 @@
      line-height:0px;
 
   }
-
-
   </style>
 </head>
 
@@ -111,7 +109,6 @@
         }
       ?>
 
-
 <div class="container" style="margin-top:30px">
   <div class="row">
     <div class="col-sm-4">
@@ -119,23 +116,19 @@
       <h5>Nuestra tienda:</h5>
       <img id="image-main" class="fakeimg" src ="https://www.emagister.com/express/media/catalog/product/cache/1/image/788x525/9df78eab33525d08d6e5fb8d27136e95/2/9/2949472_big_3/www.emagister.com-albe-formacion-premium-s.l.-2949472-curso-a-distancia-de-auxiliar-de-floristeria-31.jpg" > </img>
       <p>Llamanos al: 967809743 </p>
-
       <h2>¿Donde estamos?</h2>
       <h5>Nos podrás encontrar aqui:</h5>
       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3101.3895789236526!2d-1.8560039852783101!3d38.98360424946431!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd665fdcdb5c7bb7%3A0x646e98990feba22f!2sAv.%20de%20Espa%C3%B1a%2C%20Albacete!5e0!3m2!1ses!2ses!4v1603792953061!5m2!1ses!2ses"
       width="300" height="250" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
       <p>Flowers party, tu floristería de confianza</p>
       <p>Encuentranos en la Avenida España, 47, 02002 Albacete</p>
-
       <hr class="d-sm-none">
     </div>
-    <div class="col-sm-8">
 
+    <div class="col-sm-8">
       <h2>¡ Ofertas diarias !</h2>
       <h5>Ven ahora y descubre nuestras ofertas del día:</h5>
-
       <body data-spy="scroll" data-target="#myScrollspy" data-offset="1">
-
       <div class="container-fluid">
         <div class="row">
           <div class="col-sm-9 col-8">
@@ -183,89 +176,80 @@
   </div>
 </div>
 
-<script>
-$(document).ready(function(){
-	$('.ir-arriba').click(function(){
-		$('body, html').animate({
-			scrollTop: '0px'
-		}, 300);
-	});
-
-	$(window).scroll(function(){
-		if( $(this).scrollTop() > 0 ){
-			$('.ir-arriba').slideDown(300);
-		} else {
-			$('.ir-arriba').slideUp(300);
-		}
-	});
-
-});
-
-function logout(){
-  location.replace('../Vista/logout.php');
-}
-
-function funcionBloqueada(){
-  document.getElementById("mensajeBloqueo").style.display = "block";
-}
-
-</script>
-
-
 
 <script>
-    var cont = 0;
-    var x;
-    loadDoc(cont);
+  $(document).ready(function(){
+    $('.ir-arriba').click(function(){
+    	$('body, html').animate({
+    		scrollTop: '0px'
+    	}, 300);
+    });
 
-    function loadDoc(cont) {
-        var xhttp;
-        if (window.XMLHttpRequest) {
-            xhttp = new XMLHttpRequest();
-        } else {
-            // crear objeto para navegadores IE5 e IE6
-            xhttp = new ActiveXObject("Microsoft.XMLHTTP");
-        }
-        xhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-                muestraDatos(this, cont);
-            }
-        };
-        xhttp.open("GET", "XMLEjercicio2.xml", true);
-        xhttp.send();
-    }
+  	$(window).scroll(function(){
+  		if( $(this).scrollTop() > 0 ){
+  			$('.ir-arriba').slideDown(300);
+  		} else {
+  			$('.ir-arriba').slideUp(300);
+  		}
+  	});
+  });
 
-    function muestraDatos(xml, cont) {
-        var xmlDoc = xml.responseXML;
-        x = xmlDoc.getElementsByTagName("LIBRO");
-        document.getElementById("infoLibro").innerHTML =
-            "<img src=" + x[cont].getElementsByTagName("IMAGEN")[0].childNodes[0].nodeValue + "><h3>" +
-            x[cont].getElementsByTagName("TITULO")[0].childNodes[0].nodeValue + "<h3>" +
-            x[cont].getElementsByTagName("ORIGEN")[0].childNodes[0].nodeValue + "<h3>" +
-            x[cont].getElementsByTagName("COLOR")[0].childNodes[0].nodeValue + "<h3>" +
-            x[cont].getElementsByTagName("PRECIO")[0].childNodes[0].nodeValue + "<h3>" ;
-    }
+  function logout(){
+    location.replace('../Vista/logout.php');
+  }
 
-    //Generador num aleatorio
-    function azar() {
-        cont = Math.floor((Math.random() * x.length) + 0);
-        loadDoc(cont);
-    }
+  function funcionBloqueada(){
+    document.getElementById("mensajeBloqueo").style.display = "block";
+  }
+
+
+  var cont = 0;
+  var x;
+  loadDoc(cont);
+
+  function loadDoc(cont) {
+      var xhttp;
+      if (window.XMLHttpRequest) {
+          xhttp = new XMLHttpRequest();
+      } else {
+          // crear objeto para navegadores IE5 e IE6
+          xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+      }
+      xhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+              muestraDatos(this, cont);
+          }
+      };
+      xhttp.open("GET", "XMLEjercicio2.xml", true);
+      xhttp.send();
+  }
+
+  function muestraDatos(xml, cont) {
+      var xmlDoc = xml.responseXML;
+      x = xmlDoc.getElementsByTagName("LIBRO");
+      document.getElementById("infoLibro").innerHTML =
+          "<img src=" + x[cont].getElementsByTagName("IMAGEN")[0].childNodes[0].nodeValue + "><h3>" +
+          x[cont].getElementsByTagName("TITULO")[0].childNodes[0].nodeValue + "<h3>" +
+          x[cont].getElementsByTagName("ORIGEN")[0].childNodes[0].nodeValue + "<h3>" +
+          x[cont].getElementsByTagName("COLOR")[0].childNodes[0].nodeValue + "<h3>" +
+          x[cont].getElementsByTagName("PRECIO")[0].childNodes[0].nodeValue + "<h3>" ;
+  }
+
+  //Generador num aleatorio
+  function azar() {
+      cont = Math.floor((Math.random() * x.length) + 0);
+      loadDoc(cont);
+  }
 </script>
 
 <body>
-    <center>
-        <h1>¿No sabes que comprar?</h1>
-        <h2>Aquí te reomendamos algunos de nuestros productos: </h2>
-        <div id='infoLibro'></div><br>
-        <input type="button" onclick="azar()" value="Recomiendame una Flor">
-    </center>
+  <center>
+    <h1>¿No sabes que comprar?</h1>
+    <h2>Aquí te reomendamos algunos de nuestros productos: </h2>
+    <div id='infoLibro'></div><br>
+    <input type="button" onclick="azar()" value="Recomiendame una Flor">
+  </center>
 </body>
-
-
-
-
-
 
 <footer class="jumbotron text-center" style="margin-bottom:0">
   Pie de página <br>
@@ -294,8 +278,6 @@ function funcionBloqueada(){
     }
   ?>
 </footer>
-
-
 
 </body>
 </html>
