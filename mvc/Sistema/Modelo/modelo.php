@@ -86,8 +86,8 @@ class Articulo{
           foreach ($articulos as $articulo) {
 
             $x -> startElement('articulo');
-            $x -> writeAttribute('nombre',$articulo['nombre']);
-            $x -> writeAttribute('precio',$articulo['pvp']);
+            $x -> writeElement('nombre',$articulo['nombre']);
+            $x -> writeElement('precio',$articulo['pvp']);
             $x -> endElement();//articulo
           }
           $x->endElement();//flores
