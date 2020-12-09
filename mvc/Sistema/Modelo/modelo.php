@@ -87,6 +87,7 @@ class Articulo{
 
             $x -> startElement('articulo');
             $x -> writeAttribute('articulo',$articulo['nombre']);
+            $x -> writeAttribute('precio',$articulo['pvp']);
             $x -> endElement();//articulo
           }
           $x->endElement();//flores

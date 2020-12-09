@@ -29,11 +29,6 @@
   if($resultado == 404){
     header('Location: ./error.html');
   }
-  else if($resultado == 0){
-    header('Location: ./index.php');;
-  }
-
-
 ?>
 
 
