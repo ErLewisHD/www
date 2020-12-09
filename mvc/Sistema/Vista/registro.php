@@ -47,7 +47,7 @@ input[type=submit],input[type=reset],input[type=button]{
 		<form class="register-form" ACTION="" METHOD="post">
 			<input type="text" size="40" maxlength="60" NAME="nombre" placeholder="Nombre y Apellidos" required /><br><br>
 			<input type="text" NAME="dni" pattern="^[0-9]{8}[a-zA-Z]{1}$"
-			title="Formato incorrecto, por favor introduzca su dni del tipo: 44556677A" placeholder="Introduzca su DNI" required /><br><br>
+			title="Formato dni del tipo: 44556677A" placeholder="Introduzca su DNI" required /><br><br>
 			<input onmouseover="this.style.display='La contraseña debe tener al entre 8 y 16 caracteres, al menos un dígito, al menos una minúscula y al menos una mayúscula.
 			NO puede tener otros símbolos.';" type="password" id="password" NAME="password" pattern="^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$"
 			title="La contraseña debe tener entre 8 y 16 caracteres, al menos un dígito, al menos una minúscula y al menos una mayúscula.
