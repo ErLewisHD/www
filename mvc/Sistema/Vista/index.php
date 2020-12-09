@@ -220,19 +220,16 @@
               muestraDatos(this, cont);
           }
       };
-      xhttp.open("GET", "XMLEjercicio2.xml", true);
+      xhttp.open("GET", "catalogo.xml", true);
       xhttp.send();
   }
 
   function muestraDatos(xml, cont) {
       var xmlDoc = xml.responseXML;
-      x = xmlDoc.getElementsByTagName("LIBRO");
-      document.getElementById("infoLibro").innerHTML =
-          "<img src=" + x[cont].getElementsByTagName("IMAGEN")[0].childNodes[0].nodeValue + "><h3>" +
-          x[cont].getElementsByTagName("TITULO")[0].childNodes[0].nodeValue + "<h3>" +
-          x[cont].getElementsByTagName("ORIGEN")[0].childNodes[0].nodeValue + "<h3>" +
-          x[cont].getElementsByTagName("COLOR")[0].childNodes[0].nodeValue + "<h3>" +
-          x[cont].getElementsByTagName("PRECIO")[0].childNodes[0].nodeValue + "<h3>" ;
+      x = xmlDoc.getElementsByTagName("articulo");
+      document.getElementById("info").innerHTML =
+          "<img src=" + x[cont].getElementsByTagName("articulo")[0].childNodes[0].nodeValue + "><h3>" +
+          x[cont].getElementsByTagName("precio")[0].childNodes[0].nodeValue + "<h3>";
   }
 
   //Generador num aleatorio
@@ -246,7 +243,7 @@
   <center>
     <h1>¿No sabes que comprar?</h1>
     <h2>Aquí te reomendamos algunos de nuestros productos: </h2>
-    <div id='infoLibro'></div><br>
+    <div id='info'></div><br>
     <input type="button" onclick="azar()" value="Recomiendame una Flor">
   </center>
 </body>

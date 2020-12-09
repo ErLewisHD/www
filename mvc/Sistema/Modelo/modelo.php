@@ -86,7 +86,7 @@ class Articulo{
           foreach ($articulos as $articulo) {
 
             $x -> startElement('articulo');
-            $x -> writeAttribute('articulo',$articulo['nombre']);
+            $x -> writeAttribute('nombre',$articulo['nombre']);
             $x -> writeAttribute('precio',$articulo['pvp']);
             $x -> endElement();//articulo
           }
