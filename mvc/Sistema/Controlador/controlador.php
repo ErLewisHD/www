@@ -18,10 +18,19 @@ function loginController($dni,$pass){
   }
 }
 
-function registerController($dni, $pass, $nombre, $dir, $prefijo, $tlf){
+function registerController($dni, $pass, $nombre, $dir, $prefijo, $tlf, $recaptchaResponse, $serverRemoteAddr){
   $NewUser = new Cliente();
-  $resultado = $NewUser -> newUser($dni, $pass, $nombre, $dir, $prefijo, $tlf);
-  return $resultado;
+  //Comprobamos el reCAPTCHA
+  $checkReCaptcha = $NewUser -> checkreCaptcha($serverRemoteAddr,$recaptchaResponse);
+  //Creamos el usuario
+  if($checkReCaptcha != null && $checkReCaptcha->success){
+    $resultado = $NewUser -> newUser($dni, $pass, $nombre, $dir, $prefijo, $tlf);
+    return $resultado;
+  }
+  else{
+    return 100;
+  }
+
 }
 
 function crearCatalogoXML(){

@@ -10,7 +10,7 @@ class Cliente{
   }
 
   public function newUser($dni, $pass, $nombre, $dir, $prefijo, $tlf){
-  	$passHash = sha1($pass);
+    $passHash = sha1($pass);
     //Consulta
   	$sql = "INSERT INTO `cliente` (
   	`codc`, `dni`, `password`, `nombre`, `direccion`, `tlf`)
@@ -23,6 +23,23 @@ class Cliente{
   	else{
       return 0;
   	}
+  }
+
+  public function checkreCaptcha($serverRemoteAddr,$recaptchaResponse){
+    //Librería de reCAPTCHA
+    require_once "recaptchalib.php";
+    //Mi clave secreta para el reCaptcha
+    $secret = "6LfpfwMaAAAAANrs7BNMLnpi5q1xrkh-X-p6qaqi";
+    //Comprobar la clave secreta
+    $reCaptcha = new ReCaptcha($secret);
+    //Para guardar el POST del reCapcthca (inicializamos a null)
+    $response = null;
+    //Comprobamos el POST
+    if ($recaptchaResponse) {
+      $response = $reCaptcha->verifyResponse($serverRemoteAddr,$recaptchaResponse);
+    }
+
+    return $response;
   }
 
   public function getUsuario($dni){
