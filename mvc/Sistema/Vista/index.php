@@ -77,6 +77,9 @@
               <li class='nav-item'>
                 <a class='nav-link' href='./sanvalentin'>San Valentín</a>
               </li>
+              <li class='nav-item'>
+                <a class='nav-link' href='./pago.php'>Finalizar compra</a>
+              </li>
               <button onclick='logout()'>Cerrar sesion</button>
               </ul>
             </div>
