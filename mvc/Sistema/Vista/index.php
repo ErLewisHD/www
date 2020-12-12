@@ -228,7 +228,7 @@
       var xmlDoc = xml.responseXML;
       x = xmlDoc.getElementsByTagName("articulo");
       document.getElementById("info").innerHTML =
-          "<img src=" + x[cont].getElementsByTagName("nombre")[0].childNodes[0].nodeValue + "><h3>" +
+          x[cont].getElementsByTagName("nombre")[0].childNodes[0].nodeValue + "<h3>" +
           x[cont].getElementsByTagName("precio")[0].childNodes[0].nodeValue + "<h3>";
   }
 
