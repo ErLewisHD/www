@@ -241,9 +241,15 @@ function myFunction(xml) {
   table= '<tr><th></th><th></th></tr>';
   x = xmlDoc.getElementsByTagName("articulo");
   for (i = 0; i < x.length; i++) {
-    table += x[i].getElementsByTagName("nombre")[0].childNodes[0].nodeValue+'<img src="../../img/' +
+    table += '<tr><td><br><h5>' +
+    x[i].getElementsByTagName("nombre")[0].childNodes[0].nodeValue + '</h5><br>Color: '+
+    x[i].getElementsByTagName("color")[0].childNodes[0].nodeValue + '<br>Cantidad disponible: ' +
+    x[i].getElementsByTagName("cantidad")[0].childNodes[0].nodeValue + '<br>Precio: ' +
+    x[i].getElementsByTagName("precio")[0].childNodes[0].nodeValue + '€                 Iva: ' +
+    x[i].getElementsByTagName("iva")[0].childNodes[0].nodeValue +
+    '%</td><td><img src="../../img/' +
     x[i].getElementsByTagName("foto")[0].childNodes[0].nodeValue +
-    '" alt="Foto" onmouseover="bigImg(this)" onmouseout="normalImg(this)">';
+    '" alt="Foto" onmouseover="bigImg(this)" onmouseout="normalImg(this)"> </td></tr>';
   }
   document.getElementById("catalogo").innerHTML = table;
 }
