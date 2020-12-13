@@ -148,20 +148,32 @@ $(document).ready(function(){
 <div id="panel4">De mayor a menor precio!</div>
 </header>
 
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-3 ">
+      <nav>
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Color</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Precio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Nombre</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="col-9 ">
+      <div class="table-responsive">
+        <table id="catalogo" class="table table-bordered">
 
-<section>
-  <nav>
-    <ul>
-      <li><a href="#">Color</a></li>
-      <li><a href="#">Precio</a></li>
-      <li><a href="#">Nombre</a></li>
-    </ul>
-  </nav>
-
-  <article id="catalogo">
-
-  </article>
-</section>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
 
 <div class="container">
 
@@ -226,6 +238,7 @@ xmlhttp.send();
 function myFunction(xml) {
   var x, i, xmlDoc, table;
   xmlDoc = xml.responseXML;
+  table= '<tr><th></th><th></th></tr>';
   x = xmlDoc.getElementsByTagName("articulo");
   for (i = 0; i < x.length; i++) {
     table += x[i].getElementsByTagName("nombre")[0].childNodes[0].nodeValue+'<img src="../../img/' +
