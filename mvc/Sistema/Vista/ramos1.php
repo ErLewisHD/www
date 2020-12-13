@@ -242,7 +242,7 @@ function myFunction(xml) {
   x = xmlDoc.getElementsByTagName("articulo");
   for (i = 0; i < x.length; i++) {
     table += x[i].getElementsByTagName("nombre")[0].childNodes[0].nodeValue+'<img src="../../img/' +
-    x[i].getElementsByTagName("Foto")[0].childNodes[0].nodeValue +
+    x[i].getElementsByTagName("foto")[0].childNodes[0].nodeValue +
     '" alt="Foto" onmouseover="bigImg(this)" onmouseout="normalImg(this)">';
   }
   document.getElementById("catalogo").innerHTML = table;
