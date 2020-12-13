@@ -65,7 +65,6 @@
         border-radius: 4px;
         font-size: 15px;
         background-color: white;
-        background-image: url('searchicon.png');
         background-position: 10px 10px;
         background-repeat: no-repeat;
         padding: 12px 20px 12px 40px;
@@ -81,11 +80,10 @@
         <input type="text" name="search" placeholder="Search..">
       </form>
       <button onclick='logout()'>Cerrar sesion</button>
-      </body>
     </ul>
   </div>
 </nav>
-
+</body>
 
 <head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -142,58 +140,29 @@ $(document).ready(function(){
 </head>
 <body>
 
+<header>
 <div id="flip">Filtro para búsqueda:</div>
 <div id="panel">Mas vendidos! </div>
 <div id="panel2">Mejor valorados!</div>
 <div id="panel3">De menor a mayor precio!</div>
 <div id="panel4">De mayor a menor precio!</div>
+</header>
 
-</body>
-
-<br>
-</br>
-
-<center>
-<section>
-  <article> <img onmouseover="bigImg(this)" onmouseout="normalImg(this)" src="../../img/ramo1.jpg" alt="ramo2"> </article>
-  <aside>
-    Ramo de flores de la leche pa to los gustos jejejej ete sech
-    <div class="input-group input-group-sm">
-      <span class="input-group-addon">Cant.</span>
-      <input type="text" class="form-control" placeholder="cantidad">
-    </div>
-  </aside>
-
-  <a class="button" href="./Comprar">Comprar</a>
-
-  <br></br>
-
-</section>
 
 <section>
-  <article> <img src="../../img/ramo2.jpg" onmouseover="bigImg(this)" onmouseout="normalImg(this)" alt="ramo2"> </article>
-  <aside>
-      Son de amores (son de amores)
-      Amores que matan
-      Amores que ríen
-      Amores que lloran
-      Amores que amargan
-      Son de amores (son de amores)
-      Amores que engañan
-      Amores que agobian
-      Amores que juegan
-      Amores que faltan
-      Ah-ah-ah-ah
+  <nav>
+    <ul>
+      <li><a href="#">Color</a></li>
+      <li><a href="#">Precio</a></li>
+      <li><a href="#">Nombre</a></li>
+    </ul>
+  </nav>
 
-      <div class="input-group input-group-sm">
-        <span class="input-group-addon">Cant.</span>
-        <input type="text" class="form-control" placeholder="cantidad">
-      </div>
-  </aside>
-  <button>Comprar</button>
-  <br></br>
+  <article id="catalogo">
+
+  </article>
 </section>
-</center>
+
 <div class="container">
 
   <ul  class="pagination justify-content-center">
@@ -204,7 +173,7 @@ $(document).ready(function(){
   </ul>
 </div>
 
-<head>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
 $(document).ready(function(){
@@ -214,7 +183,7 @@ $(document).ready(function(){
   });
 });
 </script>
-</head>
+
 <body>
 
 <button>Esconder publicidad</button>
@@ -243,6 +212,29 @@ function normalImg(x) {
   x.style.width = "250px";
 }
 </script>
+<script>
+var xmlhttp = new XMLHttpRequest();
+xmlhttp.onreadystatechange = function() {
+  if (this.readyState == 4 && this.status == 200) {
+    myFunction(this);
+  }
+};
+xmlhttp.open("GET", "catalogo.xml" , true);
+xmlhttp.send();
 
+
+function myFunction(xml) {
+  var x, i, xmlDoc, table;
+  xmlDoc = xml.responseXML;
+  x = xmlDoc.getElementsByTagName("articulo");
+  for (i = 0; i < x.length; i++) {
+    table += x[i].getElementsByTagName("nombre")[0].childNodes[0].nodeValue+'<img src="' +
+    x[i].getElementsByTagName("foto")[0].childNodes[0].nodeValue +
+    '" alt="Foto" onmouseover="bigImg(this)" onmouseout="normalImg(this)">';
+  }
+  document.getElementById("catalogo").innerHTML = table;
+}
+</script>
 </body>
+
 </html>

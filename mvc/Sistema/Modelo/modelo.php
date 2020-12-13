@@ -105,6 +105,11 @@ class Articulo{
             $x -> startElement('articulo');
             $x -> writeElement('nombre',$articulo['nombre']);
             $x -> writeElement('precio',$articulo['pvp']);
+            $x -> writeElement('color',$articulo['color']);
+            $x -> writeElement('cantidad',$articulo['ctd']);
+            $x -> writeElement('iva',$articulo['iva']);
+            $x -> writeElement('foto',$articulo['foto']);
+
             $x -> endElement();//articulo
           }
           $x->endElement();//flores
