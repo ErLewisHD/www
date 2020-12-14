@@ -103,6 +103,7 @@ class Articulo{
           foreach ($articulos as $articulo) {
 
             $x -> startElement('articulo');
+            $x -> writeElement('coda',$articulo['coda']);
             $x -> writeElement('nombre',$articulo['nombre']);
             $x -> writeElement('precio',$articulo['pvp']);
             $x -> writeElement('color',$articulo['color']);

@@ -30,7 +30,7 @@
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
       <ul class="navbar-nav">
         <li class='nav-item'>
-          <a class='nav-link' href='./index.php'>Cancelar</a>
+          <a class='nav-link' href='./ramos1.php'>Cancelar</a>
         </li>
       </ul>
     </div>

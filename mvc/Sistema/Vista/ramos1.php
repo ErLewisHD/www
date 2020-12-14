@@ -29,6 +29,10 @@
   if($resultado == 404){
     header('Location: ./error.html');
   }
+
+  if(isset($_POST['nombre'])){
+    echo '<h1>$_POST["nombre"]</h1>';
+  }
 ?>
 
 
@@ -150,25 +154,9 @@ $(document).ready(function(){
 
 <div class="container-fluid">
   <div class="row">
-    <div class="col-3 ">
-      <nav>
-        <ul class="nav flex-column">
-          <li class="nav-item">
-            <a class="nav-link" href="#">Color</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Precio</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Nombre</a>
-          </li>
-        </ul>
-      </nav>
-    </div>
-    <div class="col-9 ">
+    <div class="col-9">
       <div class="table-responsive">
         <table id="catalogo" class="table table-bordered">
-
         </table>
       </div>
     </div>
@@ -176,7 +164,6 @@ $(document).ready(function(){
 </div>
 
 <div class="container">
-
   <ul  class="pagination justify-content-center">
     <li class="page-item"><a class="page-link" href="#">Anterior</a></li>
     <li class="page-item active"><a class="page-link" href="./ramos1.html">1</a></li>
@@ -197,7 +184,6 @@ $(document).ready(function(){
 </script>
 
 <body>
-
 <button>Esconder publicidad</button>
 
 <p> <img src="https://www.apuestasdeportivas.pe/wp-content/uploads/sites/3/2019/08/f0ea6f91b10b6ed420d2cc04b8c73e62.jpg" onmouseover="bigImg(this)" onmouseout="normalImg(this)" alt="Publicidad"> </p>
@@ -242,23 +228,18 @@ function normalImg(x) {
     x = xmlDoc.getElementsByTagName("articulo");
     for (i = 0; i < x.length; i++) {
         table += '<tr><td><br><h5>' +
-        '<form type="hidden" action="pago.php" method="post" class="login-form">' +
           x[i].getElementsByTagName("nombre")[0].childNodes[0].nodeValue + '</h5>Color: ' +
-          '<input type = "hidden" name = "nombre" value = "x[i].getElementsByTagName("nombre")[0].childNodes[0].nodeValue" />' +
           x[i].getElementsByTagName("color")[0].childNodes[0].nodeValue + '<br>Cantidad disponible: ' +
-          '<input type = "hidden" name = "color" value = "x[i].getElementsByTagName("color")[0].childNodes[0].nodeValue" />' +
           x[i].getElementsByTagName("cantidad")[0].childNodes[0].nodeValue + '<br>Precio: ' +
-          '<input type = "hidden" name = "cantidad" value = "x[i].getElementsByTagName("cantidad")[0].childNodes[0].nodeValue" />' +
           x[i].getElementsByTagName("precio")[0].childNodes[0].nodeValue + '€' +
-          '<input type = "hidden" name = "precio" value = "x[i].getElementsByTagName("precio")[0].childNodes[0].nodeValue" />' +
           ' Iva aplicado: ' + x[i].getElementsByTagName("iva")[0].childNodes[0].nodeValue + '%' +
-          '<input type = "hidden" name = "iva" value = "x[i].getElementsByTagName("iva")[0].childNodes[0].nodeValue" />' +
-          '<br><br><input type="submit" value="Comprar"/>' +
-      '</form>' +
-      '</td><td><img src="../../img/' + x[i].getElementsByTagName("foto")[0].childNodes[0].nodeValue + '" alt="Foto" onmouseover="bigImg(this)" onmouseout="normalImg(this)" width="200" height="200"> </td></tr>';
+          '<br><br><button><a href="pago.php">Comprar</a></button>' +
+          '</td><td><img src="../../img/' + x[i].getElementsByTagName("foto")[0].childNodes[0].nodeValue + '" alt="Foto" onclick="bigImg(this)" onmouseout="normalImg(this)" width="200" height="200"> </td></tr>';
     }
     document.getElementById("catalogo").innerHTML = table;
   }
+
+
 </script>
 </body>
 
