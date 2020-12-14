@@ -97,7 +97,7 @@ $(document).ready(function(){
 
 <script>
 function logout(){
-  location.replace('../Modelo/logout.php');
+  location.replace('./logout.php');
 }
 </script>
 
