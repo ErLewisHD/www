@@ -249,7 +249,7 @@ function myFunction(xml) {
     x[i].getElementsByTagName("iva")[0].childNodes[0].nodeValue +
     '%</td><td><img src="../../img/' +
     x[i].getElementsByTagName("foto")[0].childNodes[0].nodeValue +
-    '" alt="Foto" onmouseover="bigImg(this)" onmouseout="normalImg(this)"> </td></tr>';
+    '" alt="Foto" onmouseover="bigImg(this)" onmouseout="normalImg(this)" width="200" height="200"> </td></tr>';
   }
   document.getElementById("catalogo").innerHTML = table;
 }
