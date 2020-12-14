@@ -231,8 +231,9 @@
       var xmlDoc = xml.responseXML;
       x = xmlDoc.getElementsByTagName("articulo");
       document.getElementById("info").innerHTML =
-          x[cont].getElementsByTagName("nombre")[0].childNodes[0].nodeValue + "<h3>" +
-          x[cont].getElementsByTagName("precio")[0].childNodes[0].nodeValue + "<h3>";
+          '<h2>' + x[cont].getElementsByTagName("nombre")[0].childNodes[0].nodeValue + '</h2><br>' +
+          '<img src="../../img/' + x[cont].getElementsByTagName("foto")[0].childNodes[0].nodeValue + '" width="200" height="200"><br>' +
+          '<h4>' + x[cont].getElementsByTagName("precio")[0].childNodes[0].nodeValue + ' €</h4>';
   }
 
   //Generador num aleatorio
