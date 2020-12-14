@@ -44,12 +44,9 @@
     <input type="hidden" name="cmd" value="_cart">
     <input type="hidden" name="upload" value="1">
     <input type="hidden" name="business" value="sb-mlytk4058164@business.example.com">
-    <input type="hidden" name="item_name_1" value="Articulo 1111">
+    <input type="hidden" name="item_name_1" value="$_POST["nombre"]">
 	  <input type="hidden" name="item_number_1" value="1111">
-		<input type="hidden" name="amount_1" value="11.11">
-    <input type="hidden" name="item_name_2" value="Articulo 2222">
-		<input type="hidden" name="item_number_2" value="2222">
-		<input type="hidden" name="amount_2" value="22.22">
+		<input type="hidden" name="amount_1" value="$_POST["precio"]">
     <input type="hidden" name="return" value="http://localhost/Pruebas/Tema3/Paypal/pagoconexito.php">
 		<input type="hidden" name="cancel_return" value="http://http://www.partyflowers.com/mvc/Sistema/Vista/index.php">
     <input type="hidden" name="currency_code" value="EUR">

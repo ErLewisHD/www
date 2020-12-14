@@ -225,34 +225,40 @@ function normalImg(x) {
 }
 </script>
 <script>
-var xmlhttp = new XMLHttpRequest();
-xmlhttp.onreadystatechange = function() {
-  if (this.readyState == 4 && this.status == 200) {
-    myFunction(this);
-  }
-};
-xmlhttp.open("GET", "catalogo.xml" , true);
-xmlhttp.send();
+  var xmlhttp = new XMLHttpRequest();
+  xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      myFunction(this);
+    }
+  };
+  xmlhttp.open("GET", "catalogo.xml" , true);
+  xmlhttp.send();
 
 
-function myFunction(xml) {
-  var x, i, xmlDoc, table;
-  xmlDoc = xml.responseXML;
-  table= '<tr><th></th><th></th></tr>';
-  x = xmlDoc.getElementsByTagName("articulo");
-  for (i = 0; i < x.length; i++) {
-    table += '<tr><td><br><h5>' +
-    x[i].getElementsByTagName("nombre")[0].childNodes[0].nodeValue + '</h5><br>Color: '+
-    x[i].getElementsByTagName("color")[0].childNodes[0].nodeValue + '<br>Cantidad disponible: ' +
-    x[i].getElementsByTagName("cantidad")[0].childNodes[0].nodeValue + '<br>Precio: ' +
-    x[i].getElementsByTagName("precio")[0].childNodes[0].nodeValue + '€                 Iva: ' +
-    x[i].getElementsByTagName("iva")[0].childNodes[0].nodeValue +
-    '%</td><td><img src="../../img/' +
-    x[i].getElementsByTagName("foto")[0].childNodes[0].nodeValue +
-    '" alt="Foto" onmouseover="bigImg(this)" onmouseout="normalImg(this)" width="200" height="200"> </td></tr>';
+  function myFunction(xml) {
+    var x, i, xmlDoc, table;
+    xmlDoc = xml.responseXML;
+    table= '<tr><th></th><th></th></tr>';
+    x = xmlDoc.getElementsByTagName("articulo");
+    for (i = 0; i < x.length; i++) {
+        '<form action="pago.php" method="post" class="login-form">'
+        table += '<tr><td><br><h5>' +
+        x[i].getElementsByTagName("nombre")[0].childNodes[0].nodeValue + '</h5>Color: ' +
+        '<input type = "hidden" name = "nombre" value = "x[i].getElementsByTagName("nombre")[0].childNodes[0].nodeValue" />' +
+        x[i].getElementsByTagName("color")[0].childNodes[0].nodeValue + '<br>Cantidad disponible: ' +
+        '<input type = "hidden" name = "color" value = "x[i].getElementsByTagName("color")[0].childNodes[0].nodeValue" />' +
+        x[i].getElementsByTagName("cantidad")[0].childNodes[0].nodeValue + '<br>Precio: ' +
+        '<input type = "hidden" name = "cantidad" value = "x[i].getElementsByTagName("cantidad")[0].childNodes[0].nodeValue" />' +
+        x[i].getElementsByTagName("precio")[0].childNodes[0].nodeValue + '€' +
+        '<input type = "hidden" name = "precio" value = "x[i].getElementsByTagName("precio")[0].childNodes[0].nodeValue" />' +
+        ' Iva aplicado: ' + x[i].getElementsByTagName("iva")[0].childNodes[0].nodeValue + '%' +
+        '<input type = "hidden" name = "iva" value = "x[i].getElementsByTagName("iva")[0].childNodes[0].nodeValue" />' +
+        '<br><br><input type="submit" value="Comprar"/>' +
+      '</form>' +
+      '</td><td><img src="../../img/' + x[i].getElementsByTagName("foto")[0].childNodes[0].nodeValue + '" alt="Foto" onmouseover="bigImg(this)" onmouseout="normalImg(this)" width="200" height="200"> </td></tr>';
+    }
+    document.getElementById("catalogo").innerHTML = table;
   }
-  document.getElementById("catalogo").innerHTML = table;
-}
 </script>
 </body>
 
