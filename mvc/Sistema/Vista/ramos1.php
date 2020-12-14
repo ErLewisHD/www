@@ -241,8 +241,8 @@ function normalImg(x) {
     table= '<tr><th></th><th></th></tr>';
     x = xmlDoc.getElementsByTagName("articulo");
     for (i = 0; i < x.length; i++) {
-        '<form action="pago.php" method="post" class="login-form">'
         table += '<tr><td><br><h5>' +
+        '<form type="hidden" action="pago.php" method="post" class="login-form">' +
         x[i].getElementsByTagName("nombre")[0].childNodes[0].nodeValue + '</h5>Color: ' +
         '<input type = "hidden" name = "nombre" value = "x[i].getElementsByTagName("nombre")[0].childNodes[0].nodeValue" />' +
         x[i].getElementsByTagName("color")[0].childNodes[0].nodeValue + '<br>Cantidad disponible: ' +
