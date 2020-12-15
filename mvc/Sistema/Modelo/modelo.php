@@ -84,6 +84,20 @@ class Articulo{
         $this->bd= $conexionPDO;
       }
 
+      public function getArticulo($coda){
+        $sql = "SELECT * FROM articulo WHERE coda = :coda";
+        $stmtPDO = $this->bd->prepare($sql);
+        $resultado = $stmtPDO->execute(array(':coda' => $coda));
+        //La consulta ha fallado
+        if (!$resultado) {
+          return 404;
+        }
+        //La consulta ha ido bien, devolvemos los campos del articulo
+        else {
+          return ($stmtPDO->fetch(PDO::FETCH_ASSOC));
+        }
+      }
+
       public function catalogoXML(){
 
           //consultas

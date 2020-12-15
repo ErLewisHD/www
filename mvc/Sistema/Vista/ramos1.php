@@ -233,7 +233,7 @@ function normalImg(x) {
           x[i].getElementsByTagName("cantidad")[0].childNodes[0].nodeValue + '<br>Precio: ' +
           x[i].getElementsByTagName("precio")[0].childNodes[0].nodeValue + '€' +
           ' Iva aplicado: ' + x[i].getElementsByTagName("iva")[0].childNodes[0].nodeValue + '%' +
-          '<br><br><button><a href="pago.php">Comprar</a></button>' +
+          '<br><br><form action="Comprar.php" method="POST"> <input type="hidden" name="coda" value="'+x[i].getElementsByTagName("coda")[0].childNodes[0].nodeValue+'"><input type="submit" value="Comprar"></form>' +
           '</td><td><img src="../../img/' + x[i].getElementsByTagName("foto")[0].childNodes[0].nodeValue + '" alt="Foto" onclick="bigImg(this)" onmouseout="normalImg(this)" width="200" height="200"> </td></tr>';
     }
     document.getElementById("catalogo").innerHTML = table;

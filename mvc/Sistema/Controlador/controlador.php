@@ -44,4 +44,11 @@ function crearCatalogoXML(){
   }
 }
 
+function comprarController($coda){
+  $comprar= new Articulo();
+  $articulo = $comprar -> getArticulo($coda);
+
+  return $articulo;
+}
+
 ?>

@@ -48,13 +48,47 @@
 </nav>
 
 <a id="p1" class="nav-link" href="./ramos1">Volver atrás</a>
-<br></br>
+
+<?php
+  require '../Controlador/controlador.php';
+  $articulo = comprarController($_POST["coda"]);
+  if($articulo == '404'){
+    header('Location: ./error.html');
+  }
+?>
 
 <center>
 <section>
-  <article> <img onmouseover="bigImg(this)" onmouseout="normalImg(this)" src="../../img/ramo1.jpg" alt="ramo2"> </article>
+
   <aside>
     --INFORMACIÓN ACERCA DEL PRODUCTO
+    <br></br>
+    <?php
+      echo '<img src="../../img/'.$articulo['foto'].'" alt="Foto ramo" width="500" height="500"><br>';
+      echo "<br><h4>".$articulo['nombre']."</h4>";
+      echo "<p>Color ".$articulo['color']."</p>";
+      echo "<p>Tipo: ".$articulo['tipo']."</p>";
+      echo "<p>Cantidad disponible: ".$articulo['ctd']."</p>";
+      echo "<p>Precio: ".$articulo['ctd'].".  Iva aplicado: ".$articulo['iva']."</p>";
+    ?>
+
+    <div class="input-group input-group-sm">
+      <span class="input-group-addon">Introduce la cantidad </span>
+      <input type="text" class="form-control" placeholder="cantidad">
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+    $(document).ready(function(){
+      $("#").mouseleave(function(){
+        alert("Pedido realizado con éxito!");
+      });
+    });
+    </script>
+
+    <br></br>
+    <button id="p1" >Finalizar compra</button>
+    <br></br>
     <br></br>
     * Atendemos por WhatsApp en el 678405363 todas sus dudas.
     <br></br>
@@ -65,34 +99,9 @@
     *Las flores se envían en una caja especial que las protege de cualquier daño y las mantiene ventiladas e hidratadas hasta que lleguen a su destino.
     Personaliza tu ramo con una dedicatoria, deja un mensaje con las flores, es gratuito.* Incluye sobre de conservante para prolongar la vida de las flores.
     <br></br>
-
-    <div class="input-group input-group-sm">
-      <span class="input-group-addon">Introduce la cantidad </span>
-      <input type="text" class="form-control" placeholder="cantidad">
-    </div>
-
-    <head>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script>
-    $(document).ready(function(){
-      $("#p1").mouseleave(function(){
-        alert("Pedido realizado con éxito!");
-      });
-    });
-    </script>
-    </head>
-    <body>
-
-    <br></br>
-    <button id="p1" >Finalizar compra</button>
-    <br></br>
     <a id="p1" class="nav-link" href="./ramos1">Volver atrás</a>
 
-    </body>
-
   </aside>
-
-
 
   <br></br>
 
