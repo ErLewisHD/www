@@ -60,6 +60,20 @@ class Cliente{
     }
   }
 
+  public function getCodByNombre($nombre){
+    $sql = "SELECT codc FROM cliente WHERE nombre = :nombre";
+    $stmtPDO = $this->bd->prepare($sql);
+    $resultado = $stmtPDO->execute(array(':nombre' => $nombre));
+    //La consulta ha fallado
+    if (!$resultado) {
+      return 404;
+    }
+    //La consulta ha ido bien, devolvemos los campos del usuario
+    else {
+      return ($stmtPDO->fetch(PDO::FETCH_ASSOC));
+    }
+  }
+
   public function comprobarContraseña($usuario,$password){
     $pass = sha1($password);
     //La contraseña es correcta para el usuario introducido
@@ -139,6 +153,45 @@ class Articulo{
 }
 
 class Factura{
+  private $bd;
+
+  public function __construct(){
+    require 'conexionPDO.php';
+    $this->bd= $conexionPDO;
+  }
+
+  public function crear($cantidad, $direccion, $articulo){
+
+    $precio= $cantidad*$articulo['pvp'];
+    $cliente = new Cliente();
+    $codc= $cliente -> getCodByNombre($_SESSION['usuario']);
+
+    if(codc != 404){
+      //Consulta
+    	$sql = "INSERT INTO factura VALUES (NULL, :cantidad, :fecha, :precio, :pagada, :coda, :codc)";
+
+      $stmtPDO = $this->bd->prepare($sql);
+      $resultado = $stmtPDO->execute(array(':cantidad' => $cantidad, ':fecha' => date("Y-m-d"), ':precio' => $precio,':pagada'=> date("Y-m-d"), ':coda' => $articulo['coda'], ':codc' => $codc));
+    	if (!$resultado) {
+        return 1;
+    	}
+    	else{
+        $actu = "UPDATE articulo SET ctd=(ctd- :ctd) WHERE coda= :coda";
+
+        $stmtPDO = $this->bd->prepare($sql);
+        $result = $stmtPDO->execute(array(':coda' => $articulo['coda'], ':ctd' => $cantidad));
+        if(!result){
+          return 2;
+        }else{
+          return 0;
+        }
+    	}
+
+    }else{
+      return 404;
+    }
+
+  }
 
 };
 

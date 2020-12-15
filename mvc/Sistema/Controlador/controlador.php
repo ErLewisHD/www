@@ -51,4 +51,20 @@ function comprarController($coda){
   return $articulo;
 }
 
+function crearFactura($cantidad, $direction, $articulo){
+  $factura= new Factura();
+
+  $ctd= htmlentities(addslashes($cantidad));
+  $direccion= htmlentities(addslashes($direction));
+
+  $salida = $factura -> crear($cantidad, $direccion, $articulo);
+  if($salida == '404' || $salida == '1' || $salida == '2'){
+    header('Location: ./error.html');
+  }
+  else {
+    return 0;
+  }
+
+}
+
 ?>

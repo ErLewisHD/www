@@ -40,9 +40,6 @@
       <li class="nav-item">
         <a class="nav-link" href="./sanvalentin">San Valentín</a>
       </li>
-      <li class="nav-item">
-        <a class="navbar-brand" href="./Comprar">Comprar</a>
-      </li>
     </ul>
   </div>
 </nav>
@@ -51,7 +48,7 @@
 
 <?php
   require '../Controlador/controlador.php';
-  $articulo = comprarController($_POST["coda"]);
+  $articulo = comprarController($_GET["coda"]);
   if($articulo == '404'){
     header('Location: ./error.html');
   }
@@ -72,6 +69,29 @@
       echo "<p>Precio: ".$articulo['ctd'].".  Iva aplicado: ".$articulo['iva']."</p>";
     ?>
 
+    <?php
+  		require '../Controlador/controlador.php';
+  		if(isset ($_POST["ctd"]) && isset ($_POST["direccion"])){
+  			$salida = crearFactura($_POST["ctd"], $_POST["direccion"], $_POST["articulo"]);
+
+  			if($salida == '0'){
+  				echo "<p id='exito'></p>";
+  			}
+
+  		}
+  	?>
+
+    <form id="formulario" action="/Comprar.php" method="post">
+      <label for="cantidad">Introduce cantidad: </label>
+      <input type="text" id="cantidad" name="ctd" value="1" required><br>
+      <label for="direccion">Introduce direccion de entrega:</label>
+      <input type="text" id="direccion" name="direccion" placeholder="Dirección" required><br><br>
+      <input type="hidden" value="<?php $articulo ?>" name="articulo">
+      <input type="submit" value="Finalizar compra">
+    </form>
+
+    <h3 id="mensajeExito" style="display:none">Pedidos realizado con éxito!!</h3><br>
+
     <div class="input-group input-group-sm">
       <span class="input-group-addon">Introduce la cantidad </span>
       <input type="text" class="form-control" placeholder="cantidad">
@@ -83,12 +103,14 @@
       $("#").mouseleave(function(){
         alert("Pedido realizado con éxito!");
       });
+
+      if(document.getElementById("exito")){
+        document.getElementById("formulario").style.display = "none"
+  		  document.getElementById("mensajeExito").style.display = "block";
+  		}
     });
     </script>
 
-    <br></br>
-    <button id="p1" >Finalizar compra</button>
-    <br></br>
     <br></br>
     * Atendemos por WhatsApp en el 678405363 todas sus dudas.
     <br></br>
@@ -99,7 +121,7 @@
     *Las flores se envían en una caja especial que las protege de cualquier daño y las mantiene ventiladas e hidratadas hasta que lleguen a su destino.
     Personaliza tu ramo con una dedicatoria, deja un mensaje con las flores, es gratuito.* Incluye sobre de conservante para prolongar la vida de las flores.
     <br></br>
-    <a id="p1" class="nav-link" href="./ramos1">Volver atrás</a>
+    <a id="p1" class="nav-link" href="./ramos1.php">Volver atrás</a>
 
   </aside>
 
