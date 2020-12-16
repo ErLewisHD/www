@@ -137,6 +137,7 @@ class Articulo{
             $x -> writeElement('color',$articulo['color']);
             $x -> writeElement('cantidad',$articulo['ctd']);
             $x -> writeElement('iva',$articulo['iva']);
+            $x -> writeElement('tipo',$articulo['tipo']);
             $x -> writeElement('foto',$articulo['foto']);
 
             $x -> endElement();//articulo

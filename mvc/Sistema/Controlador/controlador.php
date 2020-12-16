@@ -51,7 +51,7 @@ function comprarController($coda){
   return $articulo;
 }
 
-function crearFactura($cantidad, $direction, $articulo){
+function facturaController($cantidad, $direction, $articulo){
   $factura= new Factura();
 
   $ctd= htmlentities(addslashes($cantidad));

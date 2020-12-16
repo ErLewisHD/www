@@ -72,7 +72,7 @@
     <?php
   		require '../Controlador/controlador.php';
   		if(isset ($_POST["ctd"]) && isset ($_POST["direccion"])){
-  			$salida = crearFactura($_POST["ctd"], $_POST["direccion"], $_POST["articulo"]);
+  			$salida = facturaController($_POST["ctd"], $_POST["direccion"], $_POST["articulo"]);
 
   			if($salida == '0'){
   				echo "<p id='exito'></p>";
