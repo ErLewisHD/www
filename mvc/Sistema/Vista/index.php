@@ -168,11 +168,46 @@
           </div>
         </div>
       </div>
-    </body>
     </div>
   </div>
 </div>
 
+  <center>
+    <h1>¿No sabes que comprar?</h1>
+    <h2>Aquí te reomendamos algunos de nuestros productos: </h2>
+    <div id='info'></div><br>
+    <input type="button" onclick="azar()" value="Recomiendame una Flor">
+  </center><br>
+
+  <footer class="jumbotron text-center" style="margin-bottom:0">
+    Pie de página <br>
+    <span align="center" class="ir-arriba icon-arrow-up2"></span><br><br>
+    <?php
+      //Dia y hora actual con cookies
+      if(isset($_COOKIE["fechaActual"])){
+        echo "Fecha actual: ".$_COOKIE["fechaActual"];
+      }
+      else{
+        echo "Fecha actual: ".date("d M y");
+      }
+      //Dia y hora ultimo acceso con cookies
+      if(isset($_COOKIE["fechaUltAcceso"])){
+        echo "<br>Fecha ultimo acceso: ".$_COOKIE["fechaUltAcceso"];
+      }
+      else{
+        echo "<br>Eres el primer acceso";
+      }
+      //Contador accesos a la página
+      if(isset($_COOKIE["contador"])){
+        echo "<br>Accesos a la página: ".$_COOKIE["contador"];
+      }
+      else{
+        echo "<br>Accesos a la página: Contador reseteado, primer acceso";
+      }
+    ?>
+  </footer>
+
+</body>
 
 <script>
   $(document).ready(function(){
@@ -236,43 +271,4 @@
       loadDoc(cont);
   }
 </script>
-
-<body>
-  <center>
-    <h1>¿No sabes que comprar?</h1>
-    <h2>Aquí te reomendamos algunos de nuestros productos: </h2>
-    <div id='info'></div><br>
-    <input type="button" onclick="azar()" value="Recomiendame una Flor">
-  </center>
-</body>
-<br>
-<footer class="jumbotron text-center" style="margin-bottom:0">
-  Pie de página <br>
-  <span align="center" class="ir-arriba icon-arrow-up2"></span><br><br>
-  <?php
-    //Dia y hora actual con cookies
-    if(isset($_COOKIE["fechaActual"])){
-      echo "Fecha actual: ".$_COOKIE["fechaActual"];
-    }
-    else{
-      echo "Fecha actual: ".date("d M y");
-    }
-    //Dia y hora ultimo acceso con cookies
-    if(isset($_COOKIE["fechaUltAcceso"])){
-      echo "<br>Fecha ultimo acceso: ".$_COOKIE["fechaUltAcceso"];
-    }
-    else{
-      echo "<br>Eres el primer acceso";
-    }
-    //Contador accesos a la página
-    if(isset($_COOKIE["contador"])){
-      echo "<br>Accesos a la página: ".$_COOKIE["contador"];
-    }
-    else{
-      echo "<br>Accesos a la página: Contador reseteado, primer acceso";
-    }
-  ?>
-</footer>
-
-</body>
 </html>
