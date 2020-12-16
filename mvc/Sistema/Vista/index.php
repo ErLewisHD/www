@@ -245,7 +245,7 @@
     <input type="button" onclick="azar()" value="Recomiendame una Flor">
   </center>
 </body>
-
+<br>
 <footer class="jumbotron text-center" style="margin-bottom:0">
   Pie de página <br>
   <span align="center" class="ir-arriba icon-arrow-up2"></span><br><br>
