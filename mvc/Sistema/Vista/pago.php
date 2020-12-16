@@ -27,7 +27,7 @@
         $usuario = getUserData($_SESSION['dni']);
       }
    ?>
-  <div class="jumbotron text-center" style="background-image: url('IMAGENES_RAMOS/floresfondo.jpg'); background-size: 40% 110%; margin-bottom:auto;">
+  <div class="jumbotron text-center" style="background-image: url('../../img/floresfondo.jpg'); background-size: 40% 110%; margin-bottom:auto;">
     <h1>Party Flowers S.A.</h1>
     <p>Tu floristeria online, y cada vez la de más gente</p>
   </div>
