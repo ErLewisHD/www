@@ -15,8 +15,4 @@
     echo "<div align='center'>Numero: ".$_GET['numero']."<br>";
 		echo "DNI: ".$_GET['DNI']."<br></div>";
 	}
-  //Ejercicio 3
-  require 'ejercicio3.php';
-  //Ejercicio 2
-  require 'ejercicio2.php';
 ?>
