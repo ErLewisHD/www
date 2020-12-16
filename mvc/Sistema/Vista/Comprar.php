@@ -13,6 +13,16 @@
     height: 200px;
     background: #aaa;
   }
+  .ir-arriba {
+    width:0px;
+     height:0px;
+     border-left:25px solid transparent; /* izquierda flecha */
+     border-right:25px solid transparent; /* derecha flecha */
+     border-bottom:25px solid #0A0A0A; /* base flecha y color*/
+     font-size:0px;
+     line-height:0px;
+
+  }
   </style>
 </head>
 
@@ -44,8 +54,6 @@
   </div>
 </nav>
 
-<a id="p1" class="nav-link" href="./ramos1">Volver atrás</a>
-
 <?php
   require '../Controlador/controlador.php';
   $articulo = comprarController($_GET["coda"]);
@@ -58,7 +66,7 @@
 <section>
 
   <aside>
-    --INFORMACIÓN ACERCA DEL PRODUCTO
+    <h4>INFORMACIÓN ACERCA DEL PRODUCTO</h4>
     <br></br>
     <?php
       echo '<img src="../../img/'.$articulo['foto'].'" alt="Foto ramo" width="500" height="500"><br>';
@@ -66,11 +74,10 @@
       echo "<p>Color ".$articulo['color']."</p>";
       echo "<p>Tipo: ".$articulo['tipo']."</p>";
       echo "<p>Cantidad disponible: ".$articulo['ctd']."</p>";
-      echo "<p>Precio: ".$articulo['ctd'].".  Iva aplicado: ".$articulo['iva']."</p>";
+      echo "<p>Precio 1 producto: ".$articulo['pvp']."€ </p>";
     ?>
 
     <?php
-  		require '../Controlador/controlador.php';
   		if(isset ($_POST["ctd"]) && isset ($_POST["direccion"])){
   			$salida = facturaController($_POST["ctd"], $_POST["direccion"], $_POST["articulo"]);
 
@@ -81,24 +88,33 @@
   		}
   	?>
 
-    <form id="formulario" action="/Comprar.php" method="post">
-      <label for="cantidad">Introduce cantidad: </label>
-      <input type="text" id="cantidad" name="ctd" value="1" required><br>
-      <label for="direccion">Introduce direccion de entrega:</label>
-      <input type="text" id="direccion" name="direccion" placeholder="Dirección" required><br><br>
-      <input type="hidden" value="<?php $articulo ?>" name="articulo">
-      <input type="submit" value="Finalizar compra">
+    <form id="formulario" action="pago.php" method="post">
+      Cantidad: <input type="number" name="cantidad" value="1" max="10" required/><br>
+      <input type="hidden" value="<?php $articulo['nombre'] ?>" name="nombre"><br>
+      <input type="hidden" value="<?php $articulo['pvp'] ?>" name="pvp"><br>
+      <input type="submit" value="Finalizar compra"><br><br>
+      <input type="button" value="Volver atrás" onclick="redirectRamos1()"/>
     </form>
 
     <h3 id="mensajeExito" style="display:none">Pedidos realizado con éxito!!</h3><br>
 
-    <div class="input-group input-group-sm">
-      <span class="input-group-addon">Introduce la cantidad </span>
-      <input type="text" class="form-control" placeholder="cantidad">
-    </div>
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
+    $(document).ready(function(){
+      $('.ir-arriba').click(function(){
+      	$('body, html').animate({
+      		scrollTop: '0px'
+      	}, 300);
+      });
+
+    	$(window).scroll(function(){
+    		if( $(this).scrollTop() > 0 ){
+    			$('.ir-arriba').slideDown(300);
+    		} else {
+    			$('.ir-arriba').slideUp(300);
+    		}
+    	});
+      });
     $(document).ready(function(){
       $("#").mouseleave(function(){
         alert("Pedido realizado con éxito!");
@@ -109,19 +125,24 @@
   		  document.getElementById("mensajeExito").style.display = "block";
   		}
     });
+
+    function redirectRamos1(){
+			location.replace('./ramo1.php');
+		}
+
     </script>
 
-    <br></br>
-    * Atendemos por WhatsApp en el 678405363 todas sus dudas.
-    <br></br>
-    * Elige el dia de entrega de martes a sabado, No hay entregas domingo, lunes ni festivos.
-    <br></br>
-    * Haz tu pedido antes de las 16h y recíbelo al dia siguiente o el dia que tu elijas. Envío PRIORITARIO incluido en el precio. Entregas entre las 8 - 20h y en caso de ausencia se garantiza una segunda entrega.Los sábados entregas de 9 a 14h sin posibilidad de segunda entrega.
-    <br></br>
-    *Las flores se envían en una caja especial que las protege de cualquier daño y las mantiene ventiladas e hidratadas hasta que lleguen a su destino.
-    Personaliza tu ramo con una dedicatoria, deja un mensaje con las flores, es gratuito.* Incluye sobre de conservante para prolongar la vida de las flores.
-    <br></br>
-    <a id="p1" class="nav-link" href="./ramos1.php">Volver atrás</a>
+    <footer class="jumbotron text-center" style="margin-bottom:0">
+      * Atendemos por WhatsApp en el 678405363 todas sus dudas.
+      <br></br>
+      * Elige el dia de entrega de martes a sabado, No hay entregas domingo, lunes ni festivos.
+      <br></br>
+      * Haz tu pedido antes de las 16h y recíbelo al dia siguiente o el dia que tu elijas. Envío PRIORITARIO incluido en el precio. Entregas entre las 8 - 20h y en caso de ausencia se garantiza una segunda entrega.Los sábados entregas de 9 a 14h sin posibilidad de segunda entrega.
+      <br></br>
+      *Las flores se envían en una caja especial que las protege de cualquier daño y las mantiene ventiladas e hidratadas hasta que lleguen a su destino.
+      Personaliza tu ramo con una dedicatoria, deja un mensaje con las flores, es gratuito.* Incluye sobre de conservante para prolongar la vida de las flores.
+      <br><span align="center" class="ir-arriba icon-arrow-up2"></span>
+    </footer>
 
   </aside>
 
