@@ -223,7 +223,7 @@ $(document).ready(function(){
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
 $(document).ready(function(){
-  $().click(function(){
+  $("button").click(function(){
     $("p").hide(1000);
     alert("La publicidad ahora está oculta");
   });

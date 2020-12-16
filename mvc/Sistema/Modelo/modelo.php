@@ -6,7 +6,6 @@ class Cliente{
   public function __construct(){
     require 'conexionPDO.php';
     $this->bd= $conexionPDO;
-    session_start();
   }
 
   public function newUser($dni, $pass, $nombre, $dir, $prefijo, $tlf){
@@ -76,9 +75,11 @@ class Cliente{
 
   public function comprobarContraseña($usuario,$password){
     $pass = sha1($password);
+    session_start();
     //La contraseña es correcta para el usuario introducido
     if ($pass == $usuario['password']) {
       $_SESSION['usuario'] = $usuario['nombre'];
+      $_SESSION['dni'] = $usuario['dni'];
       return 0;
     //Contraseña incorrecta para el usuario introducido
     } else {
