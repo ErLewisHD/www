@@ -221,20 +221,18 @@ $(document).ready(function(){
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script>
-$(document).ready(function(){
-  $().click(function(){
-    $("p").hide(1000);
-    alert("La publicidad ahora está oculta");
-  });
-});
-</script>
 
 <body>
-<button>Esconder publicidad</button>
+<button id="botonPublicidad" onclick="esconderPublicidad()">Esconder publicidad</button>
+<p id="imagenPublicidad"> <img src="https://www.apuestasdeportivas.pe/wp-content/uploads/sites/3/2019/08/f0ea6f91b10b6ed420d2cc04b8c73e62.jpg" onclick="bigImg(this)" onmouseout="normalImg(this)" alt="Publicidad"> </p>
 
-<p> <img src="https://www.apuestasdeportivas.pe/wp-content/uploads/sites/3/2019/08/f0ea6f91b10b6ed420d2cc04b8c73e62.jpg" onmouseover="bigImg(this)" onmouseout="normalImg(this)" alt="Publicidad"> </p>
-
+<script>
+  function esconderPublicidad(){
+      document.getElementById("imagenPublicidad").style.display = "none";
+      document.getElementById("botonPublicidad").style.display = "none";
+      alert("La publicidad ahora está oculta");
+  }
+</script>
 </body>
 
 

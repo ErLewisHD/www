@@ -75,9 +75,7 @@
       echo "<p>Tipo: ".$articulo['tipo']."</p>";
       echo "<p>Cantidad disponible: ".$articulo['ctd']."</p>";
       echo "<p>Precio 1 producto: ".$articulo['pvp']."€ </p>";
-    ?>
 
-    <?php
   		if(isset ($_POST["ctd"]) && isset ($_POST["direccion"])){
   			$salida = facturaController($_POST["ctd"], $_POST["direccion"], $_POST["articulo"]);
 
@@ -86,15 +84,15 @@
   			}
 
   		}
-  	?>
 
-    <form id="formulario" action="pago.php" method="post">
-      Cantidad: <input type="number" name="cantidad" value="1" max="10" required/><br>
-      <input type="hidden" value="<?php $articulo['nombre'] ?>" name="nombre"><br>
-      <input type="hidden" value="<?php $articulo['pvp'] ?>" name="pvp"><br>
-      <input type="submit" value="Finalizar compra"><br><br>
-      <input type="button" value="Volver atrás" onclick="redirectRamos1()"/>
-    </form>
+      echo "<form id='formulario' action='pago.php' method='post'>
+        Cantidad: <input type='number' name='cantidad' value='1' max='10' required/><br>
+        <input type='hidden' value=".$articulo['nombre']." name='nombre'><br>
+        <input type='hidden' value=".intval($articulo['pvp'])." name='pvp'><br>
+        <input type='submit' value='Finalizar compra'><br><br>
+        <input type='button' value='Volver atrás' onclick='redirectRamos1()'/>
+      </form>";
+    ?>
 
     <h3 id="mensajeExito" style="display:none">Pedidos realizado con éxito!!</h3><br>
 
@@ -127,7 +125,7 @@
     });
 
     function redirectRamos1(){
-			location.replace('./ramo1.php');
+			location.replace('./ramos1.php');
 		}
 
     </script>

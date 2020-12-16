@@ -18,9 +18,13 @@
 
 <body>
   <?php
-      session_start();
+      require '../Controlador/controlador.php';
       if(!isset($_POST['nombre'])){
           die("No puedes acceder");
+      }
+      else{
+        session_start();
+        $usuario = getUserData($_SESSION['dni']);
       }
    ?>
   <div class="jumbotron text-center" style="background-image: url('IMAGENES_RAMOS/floresfondo.jpg'); background-size: 40% 110%; margin-bottom:auto;">
@@ -43,25 +47,30 @@
   <h3 align="center">Proceso de pago, pulse en el siguiente botón para continuar en PayPal</h3>
   <br>
 
-  <form align="center" action="https://www.sandbox.paypal.com/es/cgi-bin/webscr" method="post">
-    <input type="hidden" name="cmd" value="_cart">
-    <input type="hidden" name="business" value="sb-mlytk4058164@business.example.com">
-    <input type="hidden" name="item_name_1" value="<?php $_POST['nombre']?>">
-		<input type="hidden" name="amount_1" value="<?php intval($_POST["pvp"])*intval($_POST["cantidad"])?>">
-    <input type="hidden" name="quantity_1" value="<?php $_POST["cantidad"]?>">
-    <input type="hidden" name="item_name_2" value="Gastos de envío">
-		<input type="hidden" name="amount_2" value="10">
-    <input type="hidden" name="currency_code" value="EU">
-    <input type="hidden" name="return" value="http://localhost/Pruebas/Tema3/Paypal/pagoconexito.php">
-		<input type="hidden" name="cancel_return" value="http://http://www.partyflowers.com/mvc/Sistema/Vista/index.php">
-    <input type='hidden' name='first_name' value='PartyFlowers'>
-		<input type="hidden" name="address1" value="Calle ancha">
-		<input type="hidden" name="city" value="Albacete">
-		<input type="hidden" name="zip" value="02003">
-		<input type="hidden" name="lc" value="es">
-		<input type="hidden" name="country" value="ES">
-		<input type="image" src="https://www.paypal.com//es_ES/i/btn/x-click-but5.gif" name="submit" alt="Pagos con PayPal: Rápido, gratis y seguro">
-  </form>
-
+<?php
+  echo'
+  <form align="center" name="formTPV" method="post" action="https://www.sandbox.paypal.com/cgi-bin/webscr">
+			<input type="hidden" name="cmd" value="_cart">
+			<input type="hidden" name="upload" value="1">
+			<input type="hidden" name="business" value="sb-mlytk4058164@business.example.com">
+			<input type="hidden" name="item_name_1" value='.$_POST["nombre"].'>
+			<input type="hidden" name="amount_1" value='.$_POST["pvp"].'>
+      <input type="hidden" name="quantity_1" value='.$_POST["cantidad"].'>
+			<input type="hidden" name="item_name_2" value="Gastos de envio">
+			<input type="hidden" name="amount_2" value="10.00">
+			<input type="hidden" name="return" value="http://localhost/Pruebas/Tema3/Paypal/pagoconexito.php">
+			<input type="hidden" name="cancel_return" value="http://localhost/Pruebas/Tema3/Paypal/pagocancelado.html">
+			<input type="hidden" name="no_note" value="1">
+			<input type="hidden" name="currency_code" value="EUR">
+			<input type="hidden" name="first_name" value='.$usuario['nombre'].'>
+			<input type="hidden" name="address1" value='.$usuario['direccion'].'>
+			<input type="hidden" name="lc" value="es">
+			<input type="hidden" name="tax_1" value="2">
+			<input type="hidden" name="tax_2" value="4">
+			<input type="hidden" name="country" value="ES">
+			<input type="image" src="https://www.paypal.com//es_ES/i/btn/x-click-but5.gif" name="submit" alt="Pagos con PayPal: Rápido, gratis y seguro">
+		</form>
+    ';
+?>
 </body>
 </html>
