@@ -20,7 +20,7 @@
   <?php
       session_start();
       if(!isset($_POST['nombre'])){
-
+          die("No puedes acceder");
       }
    ?>
   <div class="jumbotron text-center" style="background-image: url('IMAGENES_RAMOS/floresfondo.jpg'); background-size: 40% 110%; margin-bottom:auto;">
@@ -44,25 +44,21 @@
   <br>
 
   <form align="center" action="https://www.sandbox.paypal.com/es/cgi-bin/webscr" method="post">
-    <input type="hidden" name="cmd" value="_xclick">
-    <input type="hidden" name="upload" value="1">
+    <input type="hidden" name="cmd" value="_cart">
     <input type="hidden" name="business" value="sb-mlytk4058164@business.example.com">
-    <input type="hidden" name="item_name" value=".<?php $_POST['nombre']?>.">
-	  <input type="hidden" name="item_number" value="1111">
-		<input type="hidden" name="amount" value="<?php intval($_POST["pvp"])*intval($_POST["cantidad"])?>">
+    <input type="hidden" name="item_name_1" value="<?php $_POST['nombre']?>">
+		<input type="hidden" name="amount_1" value="<?php intval($_POST["pvp"])*intval($_POST["cantidad"])?>">
+    <input type="hidden" name="quantity_1" value="<?php $_POST["cantidad"]?>">
+    <input type="hidden" name="item_name_2" value="Gastos de envío">
+		<input type="hidden" name="amount_2" value="10">
+    <input type="hidden" name="currency_code" value="EU">
     <input type="hidden" name="return" value="http://localhost/Pruebas/Tema3/Paypal/pagoconexito.php">
 		<input type="hidden" name="cancel_return" value="http://http://www.partyflowers.com/mvc/Sistema/Vista/index.php">
-    <input type="hidden" name="currency_code" value="EUR">
-    <?php
-      echo "<input type='hidden' name='first_name' value='PartyFlowers'>";
-     ?>
-
+    <input type='hidden' name='first_name' value='PartyFlowers'>
 		<input type="hidden" name="address1" value="Calle ancha">
 		<input type="hidden" name="city" value="Albacete">
 		<input type="hidden" name="zip" value="02003">
 		<input type="hidden" name="lc" value="es">
-		<input type="hidden" name="tax_1" value="2">
-		<input type="hidden" name="tax_2" value="4">
 		<input type="hidden" name="country" value="ES">
 		<input type="image" src="https://www.paypal.com//es_ES/i/btn/x-click-but5.gif" name="submit" alt="Pagos con PayPal: Rápido, gratis y seguro">
   </form>
