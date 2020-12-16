@@ -86,72 +86,66 @@ class Cliente{
       return 1;
     }
   }
-
-
 };
 
 class Articulo{
+  private $bd;
 
-      private $bd;
+  public function __construct(){
+    require 'conexionPDO.php';
+    $this->bd= $conexionPDO;
+  }
 
-      public function __construct(){
-        require 'conexionPDO.php';
-        $this->bd= $conexionPDO;
-      }
-
-      public function getArticulo($coda){
-        $sql = "SELECT * FROM articulo WHERE coda = :coda";
-        $stmtPDO = $this->bd->prepare($sql);
-        $resultado = $stmtPDO->execute(array(':coda' => $coda));
-        //La consulta ha fallado
-        if (!$resultado) {
-          return 404;
-        }
-        //La consulta ha ido bien, devolvemos los campos del articulo
-        else {
-          return ($stmtPDO->fetch(PDO::FETCH_ASSOC));
-        }
-      }
-
-      public function catalogoXML(){
-
-          //consultas
-          $sql = "SELECT * FROM articulo WHERE ctd > 0";
-          $bdArticulos = $this->bd->prepare($sql);
-
-          //buscar los articulos
-          $bdArticulos->execute();
-          $articulos = $bdArticulos->fetchAll(PDO::FETCH_ASSOC);
-
-
-          $x = new XMLWriter();
-          $x -> openMemory();
-          $x -> startDocument('1.0','UTF-8');
-          $x -> startElement('flores');
-
-          foreach ($articulos as $articulo) {
-
-            $x -> startElement('articulo');
-            $x -> writeElement('coda',$articulo['coda']);
-            $x -> writeElement('nombre',$articulo['nombre']);
-            $x -> writeElement('precio',$articulo['pvp']);
-            $x -> writeElement('color',$articulo['color']);
-            $x -> writeElement('cantidad',$articulo['ctd']);
-            $x -> writeElement('iva',$articulo['iva']);
-            $x -> writeElement('tipo',$articulo['tipo']);
-            $x -> writeElement('foto',$articulo['foto']);
-
-            $x -> endElement();//articulo
-          }
-          $x->endElement();//flores
-          $x->endDocument();
-          $xml = $x->outputMemory();
-
-          //escribimos y creamos documento
-          $file = fopen("catalogo.xml", "w");
-          fwrite($file,$xml);
-          fclose($file);
+  public function getArticulo($coda){
+    $sql = "SELECT * FROM articulo WHERE coda = :coda";
+    $stmtPDO = $this->bd->prepare($sql);
+    $resultado = $stmtPDO->execute(array(':coda' => $coda));
+    //La consulta ha fallado
+    if (!$resultado) {
+      return 404;
     }
+    //La consulta ha ido bien, devolvemos los campos del articulo
+    else {
+      return ($stmtPDO->fetch(PDO::FETCH_ASSOC));
+    }
+  }
+
+  public function catalogoXML(){
+    //consultas
+    $sql = "SELECT * FROM articulo WHERE ctd > 0";
+    $bdArticulos = $this->bd->prepare($sql);
+
+    //buscar los articulos
+    $bdArticulos->execute();
+    $articulos = $bdArticulos->fetchAll(PDO::FETCH_ASSOC);
+
+    $x = new XMLWriter();
+    $x -> openMemory();
+    $x -> startDocument('1.0','UTF-8');
+    $x -> startElement('flores');
+
+    foreach ($articulos as $articulo) {
+      $x -> startElement('articulo');
+      $x -> writeElement('coda',$articulo['coda']);
+      $x -> writeElement('nombre',$articulo['nombre']);
+      $x -> writeElement('precio',$articulo['pvp']);
+      $x -> writeElement('color',$articulo['color']);
+      $x -> writeElement('cantidad',$articulo['ctd']);
+      $x -> writeElement('iva',$articulo['iva']);
+      $x -> writeElement('tipo',$articulo['tipo']);
+      $x -> writeElement('foto',$articulo['foto']);
+      $x -> endElement();//articulo
+    }
+
+    $x->endElement();//flores
+    $x->endDocument();
+    $xml = $x->outputMemory();
+
+    //escribimos y creamos documento
+    $file = fopen("catalogo.xml", "w");
+    fwrite($file,$xml);
+    fclose($file);
+  }
 }
 
 class Factura{
@@ -163,7 +157,6 @@ class Factura{
   }
 
   public function crear($cantidad, $direccion, $articulo){
-
     $precio= $cantidad*$articulo['pvp'];
     $cliente = new Cliente();
     $codc= $cliente -> getCodByNombre($_SESSION['usuario']);
@@ -171,7 +164,6 @@ class Factura{
     if(codc != 404){
       //Consulta
     	$sql = "INSERT INTO factura VALUES (NULL, :cantidad, :fecha, :precio, :pagada, :coda, :codc)";
-
       $stmtPDO = $this->bd->prepare($sql);
       $resultado = $stmtPDO->execute(array(':cantidad' => $cantidad, ':fecha' => date("Y-m-d"), ':precio' => $precio,':pagada'=> date("Y-m-d"), ':coda' => $articulo['coda'], ':codc' => $codc));
     	if (!$resultado) {
@@ -189,13 +181,10 @@ class Factura{
         }
     	}
 
-    }else{
+    }
+    else{
       return 404;
     }
-
   }
-
 };
-
-
  ?>
