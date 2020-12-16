@@ -44,23 +44,7 @@
       width: 100%;
     }
 
-    #panel,#panel2,#panel3,#panel4,#flip {
-      padding: 5px;
-      text-align: center;
-      background-color: #e5eecc;
-      border: solid 1px #c3c3c3;
-    }
-
-    #panel,#panel2,#panel3,#panel4 {
-      padding: 5px;
-      display: none;
-    }
   </style>
-  <div id="flip">Filtro para búsqueda:</div>
-  <div id="panel">Mas vendidos! </div>
-  <div id="panel2">Mejor valorados!</div>
-  <div id="panel3">De menor a mayor precio!</div>
-  <div id="panel4">De mayor a menor precio!</div>
 </head>
 
 <body>
