@@ -8,25 +8,62 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  <style>
-  .fakeimg {
-    height: 200px;
-    background: #aaa;
-  }
-  .btn-group-vertical{
-    width: 350px;
-    background-color:DodgerBlue;
-    border-style: groove;
-    border-width: 4px;
-  }
-  .btn{
-    border-style: groove;
-    border-width: 5px;
-  }
-  </style>
-</head>
-<body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
+  <style>
+    .fakeimg {
+      height: 200px;
+      background: #aaa;
+    }
+    .btn-group-vertical{
+      width: 350px;
+      background-color:DodgerBlue;
+      border-style: groove;
+      border-width: 4px;
+    }
+    .btn{
+      border-style: groove;
+      border-width: 5px;
+    }
+
+    input[type=text] {
+      width: 530px;
+      box-sizing: border-box;
+      border: 2px solid #ccc;
+      border-radius: 4px;
+      font-size: 15px;
+      background-color: white;
+      background-position: 10px 10px;
+      background-repeat: no-repeat;
+      padding: 12px 20px 12px 40px;
+      transition: width 0.4s ease-in-out;
+    }
+
+    input[type=text]:focus {
+      width: 100%;
+    }
+
+    #panel,#panel2,#panel3,#panel4,#flip {
+      padding: 5px;
+      text-align: center;
+      background-color: #e5eecc;
+      border: solid 1px #c3c3c3;
+    }
+
+    #panel,#panel2,#panel3,#panel4 {
+      padding: 5px;
+      display: none;
+    }
+  </style>
+  <div id="flip">Filtro para búsqueda:</div>
+  <div id="panel">Mas vendidos! </div>
+  <div id="panel2">Mejor valorados!</div>
+  <div id="panel3">De menor a mayor precio!</div>
+  <div id="panel4">De mayor a menor precio!</div>
+</head>
+
+<body>
 
 <?php
   require '../Controlador/controlador.php';
@@ -51,7 +88,6 @@
   <p>Tu floristeria online, y cada vez la de más gente</p>
 </div>
 
-
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
   <a class="nav-link" href="./index">Inicio</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -69,27 +105,6 @@
         <a class="nav-link" href="./sanvalentin.html">San Valentín</a>
       </li>
 
-
-      <head>
-      <style>
-      input[type=text] {
-        width: 530px;
-        box-sizing: border-box;
-        border: 2px solid #ccc;
-        border-radius: 4px;
-        font-size: 15px;
-        background-color: white;
-        background-position: 10px 10px;
-        background-repeat: no-repeat;
-        padding: 12px 20px 12px 40px;
-        transition: width 0.4s ease-in-out;
-      }
-
-      input[type=text]:focus {
-        width: 100%;
-      }
-      </style>
-      </head>
       <form>
         <input type="text" name="search" placeholder="Search..">
       </form>
@@ -97,70 +112,6 @@
     </ul>
   </div>
 </nav>
-</body>
-
-<head>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script>
-$(document).ready(function(){
-  $("#flip").click(function(){
-    $("#panel").slideToggle("slow");
-  });
-});
-</script>
-
-<script>
-function logout(){
-  location.replace('./logout.php');
-}
-</script>
-
-<script>
-$(document).ready(function(){
-  $("#flip").click(function(){
-    $("#panel2").slideToggle("slow");
-  });
-});
-</script>
-
-<script>
-$(document).ready(function(){
-  $("#flip").click(function(){
-    $("#panel3").slideToggle("slow");
-  });
-});
-</script>
-
-<script>
-$(document).ready(function(){
-  $("#flip").click(function(){
-    $("#panel4").slideToggle("slow");
-  });
-});
-</script>
-<style>
-#panel,#panel2,#panel3,#panel4,#flip {
-  padding: 5px;
-  text-align: center;
-  background-color: #e5eecc;
-  border: solid 1px #c3c3c3;
-}
-
-#panel,#panel2,#panel3,#panel4 {
-  padding: 5px;
-  display: none;
-}
-</style>
-</head>
-<body>
-
-<header>
-<div id="flip">Filtro para búsqueda:</div>
-<div id="panel">Mas vendidos! </div>
-<div id="panel2">Mejor valorados!</div>
-<div id="panel3">De menor a mayor precio!</div>
-<div id="panel4">De mayor a menor precio!</div>
-</header>
 
 <div class="container-fluid">
   <div class="row">
@@ -220,19 +171,11 @@ $(document).ready(function(){
 </div>
 
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-<body>
+
 <button id="botonPublicidad" onclick="esconderPublicidad()">Esconder publicidad</button>
 <p id="imagenPublicidad"> <img src="https://www.apuestasdeportivas.pe/wp-content/uploads/sites/3/2019/08/f0ea6f91b10b6ed420d2cc04b8c73e62.jpg" onclick="bigImg(this)" onmouseout="normalImg(this)" alt="Publicidad"> </p>
 
-<script>
-  function esconderPublicidad(){
-      document.getElementById("imagenPublicidad").style.display = "none";
-      document.getElementById("botonPublicidad").style.display = "none";
-      alert("La publicidad ahora está oculta");
-  }
-</script>
 </body>
 
 
@@ -245,18 +188,22 @@ $(document).ready(function(){
 </audio>
 
 <script>
-function bigImg(x) {
-  x.style.height = "400px";
-  x.style.width = "400px";
-}
+  function esconderPublicidad(){
+      document.getElementById("imagenPublicidad").style.display = "none";
+      document.getElementById("botonPublicidad").style.display = "none";
+      alert("La publicidad ahora está oculta");
+  }
 
-function normalImg(x) {
-  x.style.height = "250px";
-  x.style.width = "250px";
-}
-</script>
+  function bigImg(x) {
+    x.style.height = "400px";
+    x.style.width = "400px";
+  }
 
-<script>
+  function normalImg(x) {
+    x.style.height = "250px";
+    x.style.width = "250px";
+  }
+
   var xmlhttp = new XMLHttpRequest();
   xmlhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
@@ -265,7 +212,6 @@ function normalImg(x) {
   };
   xmlhttp.open("GET", "catalogo.xml" , true);
   xmlhttp.send();
-
 
   function myFunction(xml) {
     var x, i, xmlDoc, table;
@@ -284,7 +230,6 @@ function normalImg(x) {
     }
     document.getElementById("catalogo").innerHTML = table;
   }
-
 
   function filtrar(tipo, color){
     var xmlhttp = new XMLHttpRequest();
@@ -319,6 +264,33 @@ function normalImg(x) {
     document.getElementById("catalogo").innerHTML = table;
   }
 
+  $(document).ready(function(){
+    $("#flip").click(function(){
+      $("#panel").slideToggle("slow");
+    });
+  });
+
+  function logout(){
+    location.replace('./logout.php');
+  }
+
+  $(document).ready(function(){
+    $("#flip").click(function(){
+      $("#panel2").slideToggle("slow");
+    });
+  });
+
+  $(document).ready(function(){
+    $("#flip").click(function(){
+      $("#panel3").slideToggle("slow");
+    });
+  });
+
+  $(document).ready(function(){
+    $("#flip").click(function(){
+      $("#panel4").slideToggle("slow");
+    });
+  });
 
 </script>
 </body>
