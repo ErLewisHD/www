@@ -238,7 +238,7 @@
     <tr>
       <td> </td>
       <td></td>
-      <td><a href="http://www.interior.gob.es/politica-de-cookies"> Politicas de cookies &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</a></td>
+      <td><a href="http://www.interior.gob.es/politica-de-cookies"> Politicas de cookies</a></td>
     </tr>
 
     </table>
