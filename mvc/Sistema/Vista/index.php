@@ -73,7 +73,7 @@
                 <a class='nav-link' href='./ramos1'>Ramos</a>
               </li>
               <li class='nav-item'>
-                <a class='nav-link' href='./sanvalentin'>San Valentín</a>
+                <a class='nav-link' href='./sanvalentin.php'>San Valentín</a>
               </li>
               <button onclick='logout()'>Cerrar sesion</button>
               </ul>
