@@ -50,7 +50,7 @@
   </nav>
   <?php
     if(isset($_SESSION['usuario'])){
-      echo "<p>Nombre de usuario: " .$_SESSION['usuario'] ."</p>";
+      echo "<p style='color:#fafbfd'>Has iniciado sesión como: " .$_SESSION['usuario'] ."</p>";
     }
    ?>
 
