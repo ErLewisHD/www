@@ -191,10 +191,6 @@ p2.onblur = function(){
   }
 }
 
-if(document.getElementById("error")){
-  document.getElementById("mensajeError").style.display = "block";
-}
-
 //-------------------------FUNCIONES COMPRAR.PHP-------------------------
 
 $(document).ready(function(){
