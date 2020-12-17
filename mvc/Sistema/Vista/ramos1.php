@@ -145,10 +145,7 @@
   <p id="imagenPublicidad"> <img src="https://www.apuestasdeportivas.pe/wp-content/uploads/sites/3/2019/08/f0ea6f91b10b6ed420d2cc04b8c73e62.jpg" onclick="bigImg(this)" onmouseout="normalImg(this)" alt="Publicidad"> </p>
 
   <footer  class="jumbotron text-center" style="margin-bottom:0" >
-    <span align="center" class="ir-arriba icon-arrow-up2"></span><br><br>
-    
-    <br><br>
-
+    <span align="center" class="ir-arriba icon-arrow-up2"></span>
 
     <table  style="margin: 0 auto;">
     <tr>
