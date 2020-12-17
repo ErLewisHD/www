@@ -79,7 +79,7 @@
               </ul>
             </div>
           </nav>
-      
+
           <p>Nombre de usuario: " .$_SESSION['usuario'] ."</p>
           ";
         }
@@ -183,7 +183,7 @@
 
   <footer  class="jumbotron text-center" style="margin-bottom:0" >
     <span align="center" class="ir-arriba icon-arrow-up2"></span><br><br>
-    <h1>Pie de página</h1> <br>
+
     <?php
       //Dia y hora actual con cookies
       if(isset($_COOKIE["fechaActual"])){
