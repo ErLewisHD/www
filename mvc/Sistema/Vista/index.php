@@ -220,7 +220,7 @@
     <tr>
       <td> <img src='../../img/tlf.png' WIDTH=30 HEIGHT=30</img> 967809743 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
       <td><img src='../../img/inst.png' WIDTH=40 HEIGHT=40</img> @partyflowers &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
-      <td> Nuestros servicios &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
+      <td> Términos y condiciones de uso &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
     </tr>
 
     <tr>
@@ -232,7 +232,7 @@
     <tr>
       <td> <img src='../../img/ubi.png' WIDTH=40 HEIGHT=40</img> Avenida España, 47, 02002 Albacete &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
       <td><img src='../../img/twi.png' WIDTH=30 HEIGHT=30</img> partyflowers &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
-      <td> Referencias &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
+      <td> Politicas de privacidad &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
     </tr>
 
     <tr>

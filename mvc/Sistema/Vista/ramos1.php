@@ -145,7 +145,9 @@
   <p id="imagenPublicidad"> <img src="https://www.apuestasdeportivas.pe/wp-content/uploads/sites/3/2019/08/f0ea6f91b10b6ed420d2cc04b8c73e62.jpg" onclick="bigImg(this)" onmouseout="normalImg(this)" alt="Publicidad"> </p>
 
   <footer  class="jumbotron text-center" style="margin-bottom:0" >
-    <span align="center" class="ir-arriba icon-arrow-up2"></span>
+    <span align="center" class="ir-arriba icon-arrow-up2"></span><br><br>
+    <br><br>
+
 
     <table  style="margin: 0 auto;">
     <tr>
@@ -157,7 +159,7 @@
     <tr>
       <td> <img src='../../img/tlf.png' WIDTH=30 HEIGHT=30</img> 967809743 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
       <td><img src='../../img/inst.png' WIDTH=40 HEIGHT=40</img> @partyflowers &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
-      <td> Nuestros servicios &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
+      <td> Términos y condiciones de uso &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
     </tr>
 
     <tr>
@@ -169,7 +171,7 @@
     <tr>
       <td> <img src='../../img/ubi.png' WIDTH=40 HEIGHT=40</img> Avenida España, 47, 02002 Albacete &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
       <td><img src='../../img/twi.png' WIDTH=30 HEIGHT=30</img> partyflowers &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
-      <td> Referencias &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
+      <td> Politicas de privacidad &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
     </tr>
 
     <tr>
@@ -179,6 +181,7 @@
     </tr>
 
     </table>
+
   </footer>
   <audio autoplay loop>
       <source  src="../../music/musica_ramos.mp3" type="audio/mp3">
