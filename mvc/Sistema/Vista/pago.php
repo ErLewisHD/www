@@ -59,8 +59,8 @@
       <input type="hidden" name="quantity_1" value='.$_POST["cantidad"].'>
 			<input type="hidden" name="item_name_2" value="Gastos de envio">
 			<input type="hidden" name="amount_2" value="10.00">
-			<input type="hidden" name="return" value="http://localhost/Pruebas/Tema3/Paypal/pagoconexito.php">
-			<input type="hidden" name="cancel_return" value="http://localhost/Pruebas/Tema3/Paypal/pagocancelado.html">
+			<input type="hidden" name="return" value="https://partyflowers.com/mvc/Sistema/Vista/index.php">
+			<input type="hidden" name="cancel_return" value="https://partyflowers.com/mvc/Sistema/Vista/index.php">
 			<input type="hidden" name="no_note" value="1">
 			<input type="hidden" name="currency_code" value="EUR">
 			<input type="hidden" name="first_name" value='.$usuario['nombre'].'>
