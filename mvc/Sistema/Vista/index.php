@@ -79,7 +79,8 @@
               </ul>
             </div>
           </nav>
-          <p>Estoy aqui con mi compa el  " .$_SESSION['usuario'] ."</p>
+      
+          <p>Nombre de usuario: " .$_SESSION['usuario'] ."</p>
           ";
         }
         else{
