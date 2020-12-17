@@ -125,9 +125,6 @@ function logout(){
   location.replace('./logout.php');
 }
 
-
-
-
 $(function(){
     var maxHeight = 400;
     $(".dropdown > li").hover(function() {
