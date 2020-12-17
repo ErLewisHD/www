@@ -119,7 +119,7 @@
       <h5>Nos podrás encontrar aqui:</h5>
       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3101.3895789236526!2d-1.8560039852783101!3d38.98360424946431!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd665fdcdb5c7bb7%3A0x646e98990feba22f!2sAv.%20de%20Espa%C3%B1a%2C%20Albacete!5e0!3m2!1ses!2ses!4v1603792953061!5m2!1ses!2ses"
       width="300" height="250" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-      <p>Flowers party, tu floristería de confianza</p>
+      <p>Party Flowers, tu floristería de confianza</p>
       <p>Encuentranos en la Avenida España, 47, 02002 Albacete</p>
       <hr class="d-sm-none">
     </div>
