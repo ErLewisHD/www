@@ -10,7 +10,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
+  <script src="../../lib/scripts.js"></script>
   <style>
     .fakeimg {
       height: 200px;
@@ -160,93 +160,4 @@
       <source  src="../../music/musica_ramos.mp3" type="audio/mp3">
   </audio>
 </body>
-
-<script>
-  function esconderPublicidad(){
-      document.getElementById("imagenPublicidad").style.display = "none";
-      document.getElementById("botonPublicidad").style.display = "none";
-      alert("La publicidad ahora está oculta");
-  }
-
-  function bigImg(x) {
-    x.style.height = "400px";
-    x.style.width = "400px";
-  }
-
-  function normalImg(x) {
-    x.style.height = "250px";
-    x.style.width = "250px";
-  }
-
-  var xmlhttp = new XMLHttpRequest();
-  xmlhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      filtrado(this, null, null);
-    }
-  };
-  xmlhttp.open("GET", "catalogo.xml" , true);
-  xmlhttp.send();
-
-  function filtrar(tipo, color){
-    var xmlhttp = new XMLHttpRequest();
-    xmlhttp.onreadystatechange = function() {
-      if (this.readyState == 4 && this.status == 200) {
-        filtrado(this, tipo, color);
-      }
-    };
-    xmlhttp.open("GET", "catalogo.xml" , true);
-    xmlhttp.send();
-  }
-
-  function filtrado(xml, tipo, color) {
-    var x, i, xmlDoc, table, tip, colo;
-    xmlDoc = xml.responseXML;
-    table= '<tr><th></th><th></th></tr>';
-    x = xmlDoc.getElementsByTagName("articulo");
-    for (i = 0; i < x.length; i++) {
-        tip= x[i].getElementsByTagName("tipo")[0].childNodes[0].nodeValue;
-        colo= x[i].getElementsByTagName("color")[0].childNodes[0].nodeValue;
-        if((tipo== null && color == null) || (tip== tipo && (colo==color || color=='Todos'))){
-          table += '<tr><td><br><h5>' +
-            x[i].getElementsByTagName("nombre")[0].childNodes[0].nodeValue + '</h5>Color: ' +
-            x[i].getElementsByTagName("color")[0].childNodes[0].nodeValue + '<br>Cantidad disponible: ' +
-            x[i].getElementsByTagName("cantidad")[0].childNodes[0].nodeValue + '<br>Precio: ' +
-            x[i].getElementsByTagName("precio")[0].childNodes[0].nodeValue + '€' +
-            ' Iva aplicado: ' + x[i].getElementsByTagName("iva")[0].childNodes[0].nodeValue + '%' +
-            '<br><br><form action="Comprar.php" method="GET"> <input type="hidden" name="coda" value="'+x[i].getElementsByTagName("coda")[0].childNodes[0].nodeValue+'"><input type="submit" value="Comprar"></form>' +
-            '</td><td><img src="../../img/' + x[i].getElementsByTagName("foto")[0].childNodes[0].nodeValue + '" alt="Foto" onclick="bigImg(this)" onmouseout="normalImg(this)" width="200" height="200"> </td></tr>';
-        }
-    }
-    document.getElementById("catalogo").innerHTML = table;
-  }
-
-  $(document).ready(function(){
-    $("#flip").click(function(){
-      $("#panel").slideToggle("slow");
-    });
-  });
-
-  function logout(){
-    location.replace('./logout.php');
-  }
-
-  $(document).ready(function(){
-    $("#flip").click(function(){
-      $("#panel2").slideToggle("slow");
-    });
-  });
-
-  $(document).ready(function(){
-    $("#flip").click(function(){
-      $("#panel3").slideToggle("slow");
-    });
-  });
-
-  $(document).ready(function(){
-    $("#flip").click(function(){
-      $("#panel4").slideToggle("slow");
-    });
-  });
-
-</script>
 </html>
