@@ -208,7 +208,7 @@
     <br><br>
 
 
-    <table  style="margin: 0 auto;" background='../../img/fondoClaro.jpg'>
+    <table  style="margin: 0 auto;">
     <tr>
       <td><strong>Contáctanos &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</strong></td>
       <td><strong>¡Siguenos! &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</strong></td>
