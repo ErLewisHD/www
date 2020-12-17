@@ -46,7 +46,7 @@
 			<h1 align='center'>Iniciar sesión</h1>
 	    <form action="./login.php" method="post" class="login-form">
 	      <input type="text" NAME="dni" pattern="^[0-9]{8}[a-zA-Z]{1}$" title="Formato incorrecto, por favor introduzca su dni del tipo: 44556677A"
-		  placeholder="Introduza su DNI" required />
+		  	placeholder="Introduza su DNI" required />
 	      <input type="password" NAME="password" placeholder="Contraseña" required />
 				<p id="mensajeError" style="display:none">Usuario y/o contraseña incorrectos</p><br>
 	      <input type="submit" value="Acceder"/> <input type="button" value="Cancelar" onclick="redirectIndex()"/>
