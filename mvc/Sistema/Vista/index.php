@@ -89,9 +89,6 @@
                 <a class='nav-link' onclick='funcionBloqueada()'>Ramos</a>
               </li>
               <li class='nav-item'>
-                <a class='nav-link' onclick='funcionBloqueada()'>Centros</a>
-              </li>
-              <li class='nav-item'>
                 <a class='nav-link' onclick='funcionBloqueada()'>San Valentín</a>
               </li>
               <li class='nav-item'>
@@ -214,7 +211,7 @@
     <tr>
       <td><strong>Contáctanos &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</strong></td>
       <td><strong>¡Siguenos! &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</strong></td>
-      <td><strong>Políticas y seguridad &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</strong></td>
+      <td><strong>Información adicional &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</strong></td>
     </tr>
 
     <tr>

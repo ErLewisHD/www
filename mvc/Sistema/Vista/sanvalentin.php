@@ -18,6 +18,13 @@
 </head>
 <body background='../../img/coraoscuro.jpg' WIDTH=1000 HEIGHT=10000>
 
+  <?php
+    session_start();
+    if(!isset($_SESSION['usuario'])){
+      die("No puedes acceder");
+    }
+   ?>
+
   <div class="jumbotron text-center" style="background-image: url('../../img/floresfondo.jpg'); background-size: 40% 110%; margin-bottom:auto;">
     <h1>Party Flowers S.A.</h1>
     <p>Tu floristeria online, y cada vez la de más gente</p>
@@ -35,7 +42,7 @@
           <a class="nav-link" href="./ramos1.php">Ramos</a>
         </li>
         <li class="nav-item">
-          <a class="navbar-brand" href="./sanvalentin.html">San Valentín</a>
+          <a class="navbar-brand" href="./sanvalentin.php">San Valentín</a>
         </li>
         <button onclick='logout()'>Cerrar sesion</button>
       </ul>
@@ -85,7 +92,7 @@
     <tr>
       <td><strong>Contáctanos &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</strong></td>
       <td><strong>¡Siguenos! &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</strong></td>
-      <td><strong>Políticas y seguridad &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</strong></td>
+      <td><strong>Información adicional &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</strong></td>
     </tr>
 
     <tr>
