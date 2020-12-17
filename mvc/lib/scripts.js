@@ -102,7 +102,7 @@ function filtrar(tipo, color){
 function filtrado(xml, tipo, color) {
   var x, i, xmlDoc, table, tip, colo;
   xmlDoc = xml.responseXML;
-  table= '<tr><th></th><th></th></tr>';
+  table= '';
   x = xmlDoc.getElementsByTagName("articulo");
   for (i = 0; i < x.length; i++) {
       tip= x[i].getElementsByTagName("tipo")[0].childNodes[0].nodeValue;
