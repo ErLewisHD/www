@@ -91,6 +91,11 @@
       </ul>
     </div>
   </nav>
+  <?php
+    if(isset($_SESSION['usuario'])){
+      echo "<p>Nombre de usuario: " .$_SESSION['usuario'] ."</p>";
+    }
+   ?>
 
   <nav class="fitroNAV" id="filtrosNAV">
     <ul class="dropdown">
