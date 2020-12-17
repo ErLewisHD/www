@@ -209,27 +209,27 @@
 
     <table  style="margin: 0 auto;">
     <tr>
-      <td><strong>Contáctanos &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</strong></td>
-      <td><strong>¡Siguenos! &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</strong></td>
-      <td><strong>Información adicional &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</strong></td>
+      <td><strong>Contáctanos </strong></td>
+      <td><strong>¡Siguenos! </strong></td>
+      <td><strong>Información adicional </strong></td>
     </tr>
 
     <tr>
-      <td> <img src='../../img/tlf.png' WIDTH=30 HEIGHT=30</img> 967809743 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
-      <td><img src='../../img/inst.png' WIDTH=40 HEIGHT=40</img> @partyflowers &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
-      <td> Términos y condiciones de uso &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
+      <td> <img src='../../img/tlf.png' WIDTH=30 HEIGHT=30</img> 967809743</td>
+      <td><img src='../../img/inst.png'  WIDTH=40 HEIGHT=40</img><a href="https://www.instagram.com/luiisarboleda/"> @partyflowers</a></td>
+      <td> Términos y condiciones de uso </td>
     </tr>
 
     <tr>
-      <td> <img src='../../img/correo.png' WIDTH=40 HEIGHT=40</img> partyflowers@gmail.com &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
-      <td><img src='../../img/face.png' WIDTH=30 HEIGHT=30</img> partyflowers &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
-      <td> Nuestro equipo &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
+      <td> <img src='../../img/correo.png' WIDTH=40 HEIGHT=40</img> partyflowers@gmail.com </td>
+      <td><img src='../../img/face.png' WIDTH=30 HEIGHT=30</img> partyflowers </td>
+      <td> Nuestro equipo </td>
     </tr>
 
     <tr>
-      <td> <img src='../../img/ubi.png' WIDTH=40 HEIGHT=40</img> Avenida España, 47, 02002 Albacete &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
-      <td><img src='../../img/twi.png' WIDTH=30 HEIGHT=30</img> partyflowers &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
-      <td> Politicas de privacidad &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
+      <td> <img src='../../img/ubi.png' WIDTH=40 HEIGHT=40</img> Avenida España, 47, 02002 Albacete </td>
+      <td><img src='../../img/twi.png' WIDTH=30 HEIGHT=30</img> partyflowers</td>
+      <td> Politicas de privacidad </td>
     </tr>
 
     <tr>
