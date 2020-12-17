@@ -85,7 +85,7 @@
           <a class="navbar-brand" href="./ramos1.php">Ramos</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="./sanvalentin.html">San Valentín</a>
+          <a class="nav-link" href="./sanvalentin.php">San Valentín</a>
         </li>
         <button onclick='logout()'>Cerrar sesion</button>
       </ul>
@@ -135,7 +135,7 @@
   <div class="container">
     <ul  class="pagination justify-content-center">
       <li class="page-item"><a class="page-link" href="#">Anterior</a></li>
-      <li class="page-item active"><a class="page-link" href="./ramos1.html">1</a></li>
+      <li class="page-item active"><a class="page-link" href="./ramos1.php">1</a></li>
 
       <li class="page-item"><a class="page-link" >Siguiente</a></li>
     </ul>
@@ -153,7 +153,7 @@
     <tr>
       <td><strong>Contáctanos &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</strong></td>
       <td><strong>¡Siguenos! &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</strong></td>
-      <td><strong>Políticas y seguridad &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</strong></td>
+      <td><strong>Información adicional &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</strong></td>
     </tr>
 
     <tr>
