@@ -136,8 +136,8 @@
     <ul  class="pagination justify-content-center">
       <li class="page-item"><a class="page-link" href="#">Anterior</a></li>
       <li class="page-item active"><a class="page-link" href="./ramos1.html">1</a></li>
-      <li class="page-item"><a class="page-link" href="./ramos2.html">2</a></li>
-      <li class="page-item"><a class="page-link" href="./ramos2.html">Siguiente</a></li>
+
+      <li class="page-item"><a class="page-link" >Siguiente</a></li>
     </ul>
   </div>
 
