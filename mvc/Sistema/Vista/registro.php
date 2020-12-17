@@ -64,7 +64,7 @@ input[type=submit],input[type=reset],input[type=button]{
 				Seleccione su prefijo <select NAME="prefijo">
 				<option value="+34">+34</option><option value="+1">+1</option><option value="+33">+33</option><option
 				value="+39">+39</option> <input type="text" name="telefono" pattern="^[0-9]{9}$"
-				title="Formato incorrecto, por favor introduzca su tlf del tipo: 666555111" placeholder="Teléfono de contacto" required /><br><br>
+				title="Debe introducir su tlf del tipo: 666555111" placeholder="Teléfono de contacto" required /><br><br>
 				</select>
 				<div class="g-recaptcha" data-sitekey="6LfpfwMaAAAAAPcSHZyTaBWyO46iqS08eqB0E4wP"></div>
 				<p id="mensajeError" style="display:none">Debes completar el reCaptcha</p><br>
