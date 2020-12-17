@@ -25,7 +25,6 @@ function funcionBloqueada(){
   document.getElementById("mensajeBloqueo").style.display = "block";
 }
 
-
 var cont = 0;
 var x;
 loadDoc(cont);
@@ -122,42 +121,14 @@ function filtrado(xml, tipo, color) {
   document.getElementById("catalogo").innerHTML = table;
 }
 
-$(document).ready(function(){
-  $("#flip").click(function(){
-    $("#panel").slideToggle("slow");
-  });
-});
-
 function logout(){
   location.replace('./logout.php');
 }
 
-$(document).ready(function(){
-  $("#flip").click(function(){
-    $("#panel2").slideToggle("slow");
-  });
-});
-
-$(document).ready(function(){
-  $("#flip").click(function(){
-    $("#panel3").slideToggle("slow");
-  });
-});
-
-$(document).ready(function(){
-  $("#flip").click(function(){
-    $("#panel4").slideToggle("slow");
-  });
-});
-
 //-------------------------FUNCIONES LOGIN.PHP-------------------------
 
 function redirectIndex(){
-  location.replace('./index');
-}
-
-if(document.getElementById("error")){
-  document.getElementById("mensajeError").style.display = "block";
+  location.replace('./index.php');
 }
 
 //-------------------------FUNCIONES REGISTRO.PHP-------------------------
@@ -172,10 +143,6 @@ p2.onblur = function(){
   } else {
     return true;
   }
-}
-
-function redirectIndex(){
-  location.replace('./index.php');
 }
 
 if(document.getElementById("error")){
