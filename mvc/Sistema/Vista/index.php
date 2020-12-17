@@ -179,9 +179,9 @@
     <input type="button" onclick="azar()" value="Recomiendame una Flor">
   </center><br>
 
-  <footer class="jumbotron text-center" style="margin-bottom:0">
-    Pie de página <br>
+  <footer  class="jumbotron text-center" style="margin-bottom:0" >
     <span align="center" class="ir-arriba icon-arrow-up2"></span><br><br>
+    <h1>Pie de página</h1> <br>
     <?php
       //Dia y hora actual con cookies
       if(isset($_COOKIE["fechaActual"])){
@@ -205,6 +205,42 @@
         echo "<br>Accesos a la página: Contador reseteado, primer acceso";
       }
     ?>
+    <br><br>
+
+
+    <table  style="margin: 0 auto;" background='../../img/fondoClaro.jpg'>
+    <tr>
+      <td><strong>Contáctanos &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</strong></td>
+      <td><strong>¡Siguenos! &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</strong></td>
+      <td><strong>Políticas y seguridad &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</strong></td>
+    </tr>
+
+    <tr>
+      <td> <img src='../../img/tlf.png' WIDTH=30 HEIGHT=30</img> 967809743 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
+      <td><img src='../../img/inst.png' WIDTH=40 HEIGHT=40</img> @partyflowers &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
+      <td> Nuestros servicios &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
+    </tr>
+
+    <tr>
+      <td> <img src='../../img/correo.png' WIDTH=40 HEIGHT=40</img> partyflowers@gmail.com &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
+      <td><img src='../../img/face.png' WIDTH=30 HEIGHT=30</img> partyflowers &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
+      <td> Nuestro equipo &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
+    </tr>
+
+    <tr>
+      <td> <img src='../../img/ubi.png' WIDTH=40 HEIGHT=40</img> Avenida España, 47, 02002 Albacete &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
+      <td><img src='../../img/twi.png' WIDTH=30 HEIGHT=30</img> partyflowers &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
+      <td> Referencias &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
+    </tr>
+
+    <tr>
+      <td> </td>
+      <td></td>
+      <td> Politicas de seguridad &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
+    </tr>
+
+    </table>
+
   </footer>
 
 </body>
