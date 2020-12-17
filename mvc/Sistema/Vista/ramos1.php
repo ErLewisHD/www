@@ -87,9 +87,6 @@
         <li class="nav-item">
           <a class="nav-link" href="./sanvalentin.html">San Valentín</a>
         </li>
-        <form>
-          <input type="text" name="search" placeholder="Search..">
-        </form>
         <button onclick='logout()'>Cerrar sesion</button>
       </ul>
     </div>
