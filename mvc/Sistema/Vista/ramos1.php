@@ -95,7 +95,7 @@
     </div>
   </nav>
 
-  <nav class="fitroNAV">
+  <nav class="fitroNAV" id="filtrosNAV">
     <ul class="dropdown">
       <li class="drop"><a>Ramos</a>
         <ul class="sub_menu">
@@ -120,12 +120,14 @@
     </ul>
   </nav>
   <br>
+  <br>
+  <br>
 
   <div class="container-fluid">
     <div class="row">
       <div class="col-9">
         <div class="table-responsive">
-          <br><br>
+          <br>
           <table id="catalogo" class="table table-bordered">
           </table>
         </div>
