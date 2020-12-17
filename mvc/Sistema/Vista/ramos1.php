@@ -87,7 +87,6 @@
         <li class="nav-item">
           <a class="nav-link" href="./sanvalentin.html">San Valentín</a>
         </li>
-
         <form>
           <input type="text" name="search" placeholder="Search..">
         </form>
@@ -97,42 +96,38 @@
   </nav>
 
   <nav class="fitroNAV">
-
-        <ul class="dropdown">
-            <li class="drop"><a>Ramos</a>
-              <ul class="sub_menu">
-                <li><a onclick="filtrar('ramo', 'Todos')">Todos</a></li>
-                <li><a onclick="filtrar('ramo', 'blanco')">Blancos</a></li>
-                <li><a onclick="filtrar('ramo', 'rojo')">Rojos</a></li>
-              </ul>
-            </li>
-            <li class="drop"><a>Centros</a>
-              <ul class="sub_menu">
-                <li><a onclick="filtrar('centro', 'Todos')">Todos</a></li>
-                <li><a onclick="filtrar('centro', 'blanco')">Blancos</a></li>
-                <li><a onclick="filtrar('centro', 'rojo')">Rojos</a></li>
-                <li><a onclick="filtrar('centro', 'variado')">Variados</a></li>
-              </ul>
-            </li>
-            <li class="drop"><a>Coronas</a>
-              <ul class="sub_menu">
-                <li><a onclick="filtrar('corona', 'Todos')">Todos</a></li>
-              </ul>
-            </li>
-          </ul>
+    <ul class="dropdown">
+      <li class="drop"><a>Ramos</a>
+        <ul class="sub_menu">
+          <li><a onclick="filtrar('ramo', 'Todos')">Todos</a></li>
+          <li><a onclick="filtrar('ramo', 'blanco')">Blancos</a></li>
+          <li><a onclick="filtrar('ramo', 'rojo')">Rojos</a></li>
+        </ul>
+      </li>
+      <li class="drop"><a>Centros</a>
+        <ul class="sub_menu">
+          <li><a onclick="filtrar('centro', 'Todos')">Todos</a></li>
+          <li><a onclick="filtrar('centro', 'blanco')">Blancos</a></li>
+          <li><a onclick="filtrar('centro', 'rojo')">Rojos</a></li>
+          <li><a onclick="filtrar('centro', 'variado')">Variados</a></li>
+        </ul>
+      </li>
+      <li class="drop"><a>Coronas</a>
+        <ul class="sub_menu">
+          <li><a onclick="filtrar('corona', 'Todos')">Todos</a></li>
+        </ul>
+      </li>
+    </ul>
   </nav>
-
+  <br>
 
   <div class="container-fluid">
     <div class="row">
       <div class="col-9">
-
         <div class="table-responsive">
-
-
+          <br><br>
           <table id="catalogo" class="table table-bordered">
           </table>
-
         </div>
       </div>
     </div>
