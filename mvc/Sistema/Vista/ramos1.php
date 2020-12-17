@@ -55,7 +55,7 @@
     require '../Controlador/controlador.php';
     session_start();
     if(!isset($_SESSION['usuario'])){
-      die("No puedes acceder");
+      header('Location: ./index.php');
     }
 
     $resultado = crearCatalogoXML();
