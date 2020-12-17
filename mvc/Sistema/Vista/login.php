@@ -4,6 +4,7 @@
 	<link rel='stylesheet' href="../../css/login1.css">
 	<title>Inicio de sesión de un cliente</title>
 	<meta charset=utf-8 />
+	<script src="../../lib/scripts.js"></script>
 </head>
 
 <body align='center'>
@@ -32,7 +33,7 @@
 				header('Location: ./index.php');
 			}
 			else if($salida == '1'){
-				echo "<p id='error'></p>";
+				echo "<p id='errorLogin'></p>";
 			}
 			else if($salida == '404'){
 				header('Location: ./error.html');
@@ -45,9 +46,9 @@
 			<h1 align='center'>Iniciar sesión</h1>
 	    <form action="./login.php" method="post" class="login-form">
 	      <input type="text" NAME="dni" pattern="^[0-9]{8}[a-zA-Z]{1}$" title="Formato incorrecto, por favor introduzca su dni del tipo: 44556677A"
-		  placeholder="Introduza su DNI" required />
+		  	placeholder="Introduza su DNI" required />
 	      <input type="password" NAME="password" placeholder="Contraseña" required />
-				<p id="mensajeError" style="display:none">Usuario y/o contraseña incorrectos</p><br>
+				<p id="mensajeErrorLogin" style="display:none">Usuario y/o contraseña incorrectos</p><br>
 	      <input type="submit" value="Acceder"/> <input type="button" value="Cancelar" onclick="redirectIndex()"/>
 	      <p class="message">¿No tienes una cuenta con nosotros? <a href="./registro">Regístrarse</a></p>
 	    </form>
@@ -55,12 +56,8 @@
 	</div>
 
 	<script>
-		function redirectIndex(){
-			location.replace('./index');
-		}
-
-		if(document.getElementById("error")){
-		  document.getElementById("mensajeError").style.display = "block";
+		if(document.getElementById("errorLogin")){
+		  document.getElementById("mensajeErrorLogin").style.display = "block";
 		}
 	</script>
 </body>

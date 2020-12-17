@@ -9,6 +9,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="../../lib/scripts.js"></script>
   <style>
   .fakeimg {
     height: 200px;
@@ -104,36 +105,4 @@
     </section>
   </center>
 </body>
-    
-<script>
-  $(document).ready(function(){
-    $('.ir-arriba').click(function(){
-    	$('body, html').animate({
-    		scrollTop: '0px'
-    	}, 300);
-    });
-
-  	$(window).scroll(function(){
-  		if( $(this).scrollTop() > 0 ){
-  			$('.ir-arriba').slideDown(300);
-  		} else {
-  			$('.ir-arriba').slideUp(300);
-  		}
-  	});
-    });
-  $(document).ready(function(){
-    $("#").mouseleave(function(){
-      alert("Pedido realizado con éxito!");
-    });
-
-    if(document.getElementById("exito")){
-      document.getElementById("formulario").style.display = "none"
-		  document.getElementById("mensajeExito").style.display = "block";
-		}
-  });
-
-  function redirectRamos1(){
-		location.replace('./ramos1.php');
-	}
-</script>
 </html>
