@@ -4,6 +4,7 @@
 	<link rel='stylesheet' href="../../css/login1.css">
 	<title>Inicio de sesión de un cliente</title>
 	<meta charset=utf-8 />
+	<script src="../../lib/scripts.js"></script>
 </head>
 
 <body align='center'>
@@ -53,15 +54,5 @@
 	    </form>
 	  </div>
 	</div>
-
-	<script>
-		function redirectIndex(){
-			location.replace('./index');
-		}
-
-		if(document.getElementById("error")){
-		  document.getElementById("mensajeError").style.display = "block";
-		}
-	</script>
 </body>
 </html>

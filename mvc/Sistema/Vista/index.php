@@ -8,6 +8,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="../../lib/scripts.js"></script>
   <style>
   .fakeimg {
     height: 200px;
@@ -179,9 +180,9 @@
     <input type="button" onclick="azar()" value="Recomiendame una Flor">
   </center><br>
 
-  <footer class="jumbotron text-center" style="margin-bottom:0">
-    Pie de página <br>
+  <footer  class="jumbotron text-center" style="margin-bottom:0" >
     <span align="center" class="ir-arriba icon-arrow-up2"></span><br><br>
+    <h1>Pie de página</h1> <br>
     <?php
       //Dia y hora actual con cookies
       if(isset($_COOKIE["fechaActual"])){
@@ -205,70 +206,43 @@
         echo "<br>Accesos a la página: Contador reseteado, primer acceso";
       }
     ?>
+    <br><br>
+
+
+    <table  style="margin: 0 auto;" background='../../img/fondoClaro.jpg'>
+    <tr>
+      <td><strong>Contáctanos &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</strong></td>
+      <td><strong>¡Siguenos! &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</strong></td>
+      <td><strong>Políticas y seguridad &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</strong></td>
+    </tr>
+
+    <tr>
+      <td> <img src='../../img/tlf.png' WIDTH=30 HEIGHT=30</img> 967809743 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
+      <td><img src='../../img/inst.png' WIDTH=40 HEIGHT=40</img> @partyflowers &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
+      <td> Nuestros servicios &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
+    </tr>
+
+    <tr>
+      <td> <img src='../../img/correo.png' WIDTH=40 HEIGHT=40</img> partyflowers@gmail.com &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
+      <td><img src='../../img/face.png' WIDTH=30 HEIGHT=30</img> partyflowers &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
+      <td> Nuestro equipo &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
+    </tr>
+
+    <tr>
+      <td> <img src='../../img/ubi.png' WIDTH=40 HEIGHT=40</img> Avenida España, 47, 02002 Albacete &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
+      <td><img src='../../img/twi.png' WIDTH=30 HEIGHT=30</img> partyflowers &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
+      <td> Referencias &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
+    </tr>
+
+    <tr>
+      <td> </td>
+      <td></td>
+      <td> Politicas de seguridad &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
+    </tr>
+
+    </table>
+
   </footer>
 
 </body>
-
-<script>
-  $(document).ready(function(){
-    $('.ir-arriba').click(function(){
-    	$('body, html').animate({
-    		scrollTop: '0px'
-    	}, 300);
-    });
-
-  	$(window).scroll(function(){
-  		if( $(this).scrollTop() > 0 ){
-  			$('.ir-arriba').slideDown(300);
-  		} else {
-  			$('.ir-arriba').slideUp(300);
-  		}
-  	});
-  });
-
-  function logout(){
-    location.replace('../Vista/logout.php');
-  }
-
-  function funcionBloqueada(){
-    document.getElementById("mensajeBloqueo").style.display = "block";
-  }
-
-
-  var cont = 0;
-  var x;
-  loadDoc(cont);
-
-  function loadDoc(cont) {
-      var xhttp;
-      if (window.XMLHttpRequest) {
-          xhttp = new XMLHttpRequest();
-      } else {
-          // crear objeto para navegadores IE5 e IE6
-          xhttp = new ActiveXObject("Microsoft.XMLHTTP");
-      }
-      xhttp.onreadystatechange = function() {
-          if (this.readyState == 4 && this.status == 200) {
-              muestraDatos(this, cont);
-          }
-      };
-      xhttp.open("GET", "catalogo.xml", true);
-      xhttp.send();
-  }
-
-  function muestraDatos(xml, cont) {
-      var xmlDoc = xml.responseXML;
-      x = xmlDoc.getElementsByTagName("articulo");
-      document.getElementById("info").innerHTML =
-          '<h2>' + x[cont].getElementsByTagName("nombre")[0].childNodes[0].nodeValue + '</h2><br>' +
-          '<img src="../../img/' + x[cont].getElementsByTagName("foto")[0].childNodes[0].nodeValue + '" width="200" height="200"><br>' +
-          '<h4>' + x[cont].getElementsByTagName("precio")[0].childNodes[0].nodeValue + ' €</h4>';
-  }
-
-  //Generador num aleatorio
-  function azar() {
-      cont = Math.floor((Math.random() * x.length) + 0);
-      loadDoc(cont);
-  }
-</script>
 </html>

@@ -5,6 +5,7 @@
 	<title>Registro de un nuevo cliente</title>
 	<meta charset=utf-8 />
 	<script src='https://www.google.com/recaptcha/api.js?hl=es'></script>
+	<script src="../../lib/scripts.js"></script>
 </head>
 <body>
 <style>
@@ -71,28 +72,5 @@ input[type=submit],input[type=reset],input[type=button]{
 		</form>
 	</div>
 </div>
-
-<script>
-	var p1 = document.getElementById("password");
-	var p2 = document.getElementById("password2");
-
-	p2.onblur = function(){
-		if(!p1.value.match(p2.value)) {
-			alert("Las contraseñas no coinciden");
-			return false;
-		} else {
-		  return true;
-		}
-	}
-
-	function redirectIndex(){
-		location.replace('./index.php');
-	}
-
-	if(document.getElementById("error")){
-		document.getElementById("mensajeError").style.display = "block";
-	}
-</script>
-
 </body>
 </html>
