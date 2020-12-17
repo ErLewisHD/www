@@ -69,6 +69,7 @@ input[type=submit],input[type=reset],input[type=button]{
 				<div class="g-recaptcha" data-sitekey="6LfpfwMaAAAAAPcSHZyTaBWyO46iqS08eqB0E4wP"></div>
 				<p id="mensajeError" style="display:none">Debes completar el reCaptcha</p><br>
 				<input type="submit" value="Enviar"/> <input type="button" value="Cancelar" onclick="redirectIndex()"/>
+				<p class="message">¿Ya tienes una cuenta? <a href="./login.php">Iniciar Sesión</a></p>
 			</form>
 		</div>
 	</div>
