@@ -5,11 +5,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link href="filtros.css" rel="stylesheet" type="text/css">
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 
   <style>
     .fakeimg {
@@ -43,6 +46,7 @@
     input[type=text]:focus {
       width: 100%;
     }
+
 
   </style>
 </head>
@@ -93,49 +97,43 @@
     </div>
   </nav>
 
+  <nav class="fitroNAV">
+
+        <ul class="dropdown">
+            <li class="drop"><a>Ramos</a>
+              <ul class="sub_menu">
+                <li><a onclick="filtrar('ramo', 'Todos')">Todos</a></li>
+                <li><a onclick="filtrar('ramo', 'blanco')">Blancos</a></li>
+                <li><a onclick="filtrar('ramo', 'rojo')">Rojos</a></li>
+              </ul>
+            </li>
+            <li class="drop"><a>Centros</a>
+              <ul class="sub_menu">
+                <li><a onclick="filtrar('centro', 'Todos')">Todos</a></li>
+                <li><a onclick="filtrar('centro', 'blanco')">Blancos</a></li>
+                <li><a onclick="filtrar('centro', 'rojo')">Rojos</a></li>
+                <li><a onclick="filtrar('centro', 'variado')">Variados</a></li>
+              </ul>
+            </li>
+            <li class="drop"><a>Coronas</a>
+              <ul class="sub_menu">
+                <li><a onclick="filtrar('corona', 'Todos')">Todos</a></li>
+              </ul>
+            </li>
+          </ul>
+  </nav>
+
+
   <div class="container-fluid">
     <div class="row">
       <div class="col-9">
+
         <div class="table-responsive">
+
+
           <table id="catalogo" class="table table-bordered">
           </table>
-        </div>
-      </div>
-      <div class="col-3">
 
-        <br>
-        <h3>Escoge tipo y color</h3>
-        <br>
-        <div class="btn-group-vertical" >
-          <div class="btn-group">
-            <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
-              Ramos
-            </button>
-            <div class="dropdown-menu">
-              <button class="dropdown-item" onclick="filtrar('ramo', 'Todos')">Todos</button>
-              <button class="dropdown-item" onclick="filtrar('ramo', 'blanco')">Blanco</button>
-              <button class="dropdown-item" onclick="filtrar('ramo', 'rojo')">Rojo</button>
-            </div>
-          </div>
-          <div class="btn-group">
-            <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
-              Centros
-            </button>
-            <div class="dropdown-menu">
-              <button class="dropdown-item" onclick="filtrar('centro', 'Todos')">Todos</button>
-              <button class="dropdown-item" onclick="filtrar('centro', 'blanco')">Blanco</button>
-              <button class="dropdown-item" onclick="filtrar('centro', 'rojo')">Rojo</button>
-              <button class="dropdown-item" onclick="filtrar('centro', 'variado')">Variado</button>
-            </div>
-          </div>
-          <div class="btn-group">
-            <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
-              Coronas
-            </button>
-            <div class="dropdown-menu">
-              <button class="dropdown-item" onclick="filtrar('corona', 'Todos')">Todos</button>
-            </div>
-          </div>
         </div>
       </div>
     </div>
@@ -247,6 +245,73 @@
       $("#panel4").slideToggle("slow");
     });
   });
+
+
+  /*
+*
+* Credits to https://css-tricks.com/long-dropdowns-solution/
+*
+*/
+
+var maxHeight = 400;
+
+$(function(){
+
+    $(".dropdown > li").hover(function() {
+
+         var $container = $(this),
+             $list = $container.find("ul"),
+             $anchor = $container.find("a"),
+             height = $list.height() * 1.1,       // make sure there is enough room at the bottom
+             multiplier = height / maxHeight;     // needs to move faster if list is taller
+
+        // need to save height here so it can revert on mouseout
+        $container.data("origHeight", $container.height());
+
+        // so it can retain it's rollover color all the while the dropdown is open
+        $anchor.addClass("hover");
+
+        // make sure dropdown appears directly below parent list item
+        $list
+            .show()
+            .css({
+                paddingTop: $container.data("origHeight")
+            });
+
+        // don't do any animation if list shorter than max
+        if (multiplier > 1) {
+            $container
+                .css({
+                    height: maxHeight,
+                    overflow: "hidden"
+                })
+                .mousemove(function(e) {
+                    var offset = $container.offset();
+                    var relativeY = ((e.pageY - offset.top) * multiplier) - ($container.data("origHeight") * multiplier);
+                    if (relativeY > $container.data("origHeight")) {
+                        $list.css("top", -relativeY + $container.data("origHeight"));
+                    };
+                });
+        }
+
+    }, function() {
+
+        var $el = $(this);
+
+        // put things back to normal
+        $el
+            .height($(this).data("origHeight"))
+            .find("ul")
+            .css({ top: 0 })
+            .hide()
+            .end()
+            .find("a")
+            .removeClass("hover");
+
+    });
+
+});
+
 
 </script>
 </html>
