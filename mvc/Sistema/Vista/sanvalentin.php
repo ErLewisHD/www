@@ -82,7 +82,7 @@
     <source  src="../../music/sanValentin.mp3" type="audio/mp3">
 </audio>
 
-<<<<<<< HEAD:mvc/Sistema/Vista/sanvalentin.html
+
 <footer  class="jumbotron text-center" style="margin-bottom:0" >
   <span align="center" class="ir-arriba icon-arrow-up2"></span><br><br>
 
