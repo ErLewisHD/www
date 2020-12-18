@@ -48,7 +48,11 @@
       </ul>
     </div>
   </nav>
-
+  <?php
+    if(isset($_SESSION['usuario'])){
+      echo "<p style='color:#fafbfd'>Has iniciado sesión como: " .$_SESSION['usuario'] ."</p>";
+    }
+   ?>
 
 <br>
 <div class="text-center" >

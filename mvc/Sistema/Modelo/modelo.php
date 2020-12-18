@@ -26,7 +26,7 @@ class Cliente{
 
   public function checkreCaptcha($serverRemoteAddr,$recaptchaResponse){
     //Librería de reCAPTCHA
-    require_once "recaptchalib.php";
+    require_once "../../lib/recaptchalib.php";
     //Mi clave secreta para el reCaptcha
     $secret = "6LfpfwMaAAAAANrs7BNMLnpi5q1xrkh-X-p6qaqi";
     //Comprobar la clave secreta

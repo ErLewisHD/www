@@ -80,7 +80,7 @@
             </div>
           </nav>
 
-          <p>Nombre de usuario: " .$_SESSION['usuario'] ."</p>
+          <p>Has iniciado sesión como: " .$_SESSION['usuario'] ."</p>
           ";
         }
         else{
